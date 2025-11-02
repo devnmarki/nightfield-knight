@@ -5,11 +5,20 @@ namespace level_editor
 	Tilemap::Tilemap(std::vector<TexturePtr> tilesets, int tileSize, float scale)
 		: _tileSize(tileSize), _tilesets(tilesets), _scale(scale), _tilesetIndex(0)
 	{
-		
+
 	}
 
-	void Tilemap::setTile(const glm::ivec2& pos, int id)
+	void Tilemap::setTile(const glm::ivec2& pos, int id, int layerId)
 	{
+		if (_layers.size() == 0)
+		{
+			_layers.push_back(MapLayer{
+				.name = "tiles_layer",
+				.type = MapLayerType::TILE,
+				.tiles = std::unordered_map<glm::ivec2, Tile> {}
+			});
+		}
+
 		int columns = _tilesets[_tilesetIndex]->getWidth() / _tileSize;
 		int srcX = (id % columns) * _tileSize;
 		int srcY = (id / columns) * _tileSize;
@@ -18,6 +27,7 @@ namespace level_editor
 			.position = pos,
 			.id = id,
 			.tilesetId = _tilesetIndex,
+			.layerId = layerId,
 			.srcRect = {
 				srcX,
 				srcY,
@@ -26,19 +36,20 @@ namespace level_editor
 			}
 		};
 
-		_tiles[pos] = tile;
+		_layers[layerId].tiles[pos] = tile;
 	}
 
-	void Tilemap::removeTile(const glm::ivec2& pos)
+	void Tilemap::removeTile(const glm::ivec2& pos, int layerId)
 	{
-		auto it = _tiles.find(pos);
-		if (it != _tiles.end())
-			_tiles.erase(pos);
+		auto& tiles = _layers[layerId].tiles;
+		auto it = tiles.find(pos);
+		if (it != tiles.end())
+			tiles.erase(pos);
 	}
 
-	Tile& Tilemap::getTile(const glm::ivec2& position)
+	Tile& Tilemap::getTile(const glm::ivec2& position, int layerId)
 	{
-		return _tiles[position];
+		return _layers[layerId].tiles[position];
 	}
 
 	void Tilemap::render(base::Camera* camera)
@@ -56,21 +67,27 @@ namespace level_editor
 		int maxTileX = (int)std::ceil(bottomRight.x / (_tileSize * _scale));
 		int maxTileY = (int)std::ceil(bottomRight.y / (_tileSize * _scale));
 
-		for (auto& [tilePos, tile] : _tiles)
+		for (auto& layer : _layers)
 		{
-			if (tilePos.x < minTileX || tilePos.x > maxTileX || 
-				tilePos.y < minTileY || tilePos.y > maxTileY)
+			if (layer.type != MapLayerType::TILE)
 				continue;
 
-			glm::vec2 position = glm::vec2(tilePos.x * _tileSize * _scale, tilePos.y * _tileSize * _scale);
-			base::Renderer::draw(_tilesets[tile.tilesetId], position - glm::vec2((_tileSize * _scale) / 2.0f), &tile.srcRect, glm::vec2(_scale), false, 255, camera);
+			for (auto& [tilePos, tile] : layer.tiles)
+			{
+				if (tilePos.x < minTileX || tilePos.x > maxTileX || 
+					tilePos.y < minTileY || tilePos.y > maxTileY)
+					continue;
+
+				glm::vec2 position = glm::vec2(tilePos.x * _tileSize * _scale, tilePos.y * _tileSize * _scale);
+				base::Renderer::draw(_tilesets[tile.tilesetId], position - glm::vec2((_tileSize * _scale) / 2.0f), &tile.srcRect, glm::vec2(_scale), false, 255, camera);
+			}
 		}
 	}
 
 	void Tilemap::save(const std::string& filePath)
 	{
 		json data;
-		data["tiles"] = _tiles;
+		data["layers"] = _layers;
 
 		std::string fullPath = std::string(PROJECT_SOURCE_DIR) + "/res/data/maps/" + filePath;
 		std::filesystem::path path(fullPath.c_str());
@@ -105,7 +122,8 @@ namespace level_editor
 
 		file >> data;
 
-		_tiles = data["tiles"].get<std::unordered_map<glm::ivec2, Tile>>();
+		_layers.clear();
+		_layers = data["layers"].get<std::vector<MapLayer>>();
 
 		std::cout << "Loaded tilemap successfully from '" << fullPath << "'!" << std::endl;
 

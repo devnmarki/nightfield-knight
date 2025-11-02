@@ -13,6 +13,7 @@ namespace level_editor
 		glm::ivec2 position;
 		int id = -1;
         int tilesetId = 0;
+        int layerId = 0;
 		SDL_Rect srcRect;
 	};
 }
@@ -66,6 +67,7 @@ namespace nlohmann
                 {"position", tile.position},
                 {"id", tile.id},
                 {"tileset_id", tile.tilesetId},
+                {"layer_id", tile.layerId},
                 {"src_rect", tile.srcRect}
             };
         }
@@ -74,6 +76,7 @@ namespace nlohmann
             j.at("position").get_to(tile.position);
             j.at("id").get_to(tile.id);
             j.at("tileset_id").get_to(tile.tilesetId);
+            j.at("layer_id").get_to(tile.layerId);
             j.at("src_rect").get_to(tile.srcRect);
         }
     };

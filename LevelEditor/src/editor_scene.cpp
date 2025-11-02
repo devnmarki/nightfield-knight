@@ -112,17 +112,17 @@ namespace level_editor
 
 		if (base::Input::isMouseDown(1)) // Place selected tile on left button
 		{
-			_tilemap->setTile(glm::ivec2(mx, my), _selectedTile);
+			_tilemap->setTile(glm::ivec2(mx, my), _selectedTile, _currentLayerIndex);
 			_tilemap->setTilesetIndex(_currentTilesetIndex);
 		}
 		else if (base::Input::isMouseDown(3)) // Remove hovered tile on right button
 		{
-			_tilemap->removeTile(glm::ivec2(mx, my));
+			_tilemap->removeTile(glm::ivec2(mx, my), _currentLayerIndex);
 		}
 
 		if (base::Input::isMousePressed(2)) // Pickup hovered tile with middle button
 		{
-			Tile& tile = _tilemap->getTile(glm::ivec2(mx, my));
+			Tile& tile = _tilemap->getTile(glm::ivec2(mx, my), _currentLayerIndex);
 			
 			if (tile.id != -1)
 			{

@@ -10,6 +10,7 @@
 #include <nlohmann/json.hpp>
 
 #include "tilemap/tile.hpp"
+#include "tilemap/map_layer.hpp"
 #include "gfx/renderer.hpp"
 #include "asset_manager.hpp"
 #include "core/window.hpp"
@@ -25,9 +26,9 @@ namespace level_editor
 
 		Tilemap(std::vector<TexturePtr> tilesets, int tileSize = 16, float scale = 1.0f);
 
-		void setTile(const glm::ivec2& pos, int id);
-		void removeTile(const glm::ivec2& pos);
-		Tile& getTile(const glm::ivec2& position);
+		void setTile(const glm::ivec2& pos, int id, int layerId);
+		void removeTile(const glm::ivec2& pos, int layerId);
+		Tile& getTile(const glm::ivec2& position, int layerId);
 
 		void render(base::Camera* camera);
 
@@ -43,7 +44,7 @@ namespace level_editor
 	private:
 		int _tileSize;
 		float _scale;
-		std::unordered_map<glm::ivec2, Tile> _tiles;
+		std::vector<MapLayer> _layers;
 
 		std::vector<TexturePtr> _tilesets;
 		int _tilesetIndex;

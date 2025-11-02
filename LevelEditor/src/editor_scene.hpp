@@ -36,6 +36,7 @@ namespace level_editor
 		std::unique_ptr<base::SpriteSheet> _currentTileset;
 		std::unique_ptr<Tilemap> _tilemap;
 		int _selectedTile = 0;
+		int _currentLayerIndex = 0;
 		int _tileSize = 0;
 		int _tileSizeScaled = 0;
 
