@@ -31,6 +31,37 @@ namespace base
 		void updateEntities();
 		void renderEntities();
 
+		template<typename T>
+		std::vector<T*> query()
+		{
+			std::vector<T*> result;
+			auto it = _entities.find(std::type_index(typeid(T)));
+
+			if (it != _entities.end())
+			{
+				for (auto& entity : it->second)
+				{
+					result.push_back(static_cast<T*>(entity.get()));
+				}
+			}
+
+			return result;
+		}
+
+		template<typename T>
+		T* queryFirst()
+		{
+			T* result;
+			auto it = _entities.find(std::type_index(typeid(T)));
+
+			if (it != _entities.end())
+			{
+				result = static_cast<T*>(it->second[0].get());
+			}
+
+			return result;
+		}
+
 		using EntityMap = std::unordered_map<std::type_index, std::vector<std::unique_ptr<Entity>>>;
 
 		EntityMap& getEntities();

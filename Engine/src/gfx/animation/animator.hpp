@@ -11,6 +11,7 @@
 #include "gfx/animation/animation.hpp"
 #include "asset_manager.hpp"
 #include "gfx/renderer.hpp"
+#include "scene/scene_manager.hpp"
 
 using json = nlohmann::json;
 

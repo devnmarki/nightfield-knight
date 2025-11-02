@@ -4,14 +4,22 @@ void DefaultScene::enter()
 {
 	std::cout << "[DEFAULT_SCENE] Enter!" << std::endl;
 
-	_tilemap = std::make_shared<level_editor::Tilemap>(1, 1, base::AssetManager::getTexture("overworld_tileset"));
-	_tilemap->load("map_0.json");
-
 	getWorld()->createEntity<PlayerEntity>(glm::vec2(100.0f, 200.0f));
+}
+
+void DefaultScene::update()
+{
+	Scene::update();
+
+	cameraController.update(getWorld()->queryFirst<PlayerEntity>(), glm::vec2(16.0f * constants::GAME_SCALE_F), 15.0f);
+
+	if (base::Input::isKeyPressed(base::Keys::KEY_TAB))
+		base::SceneManager::loadScene("overworld");
 }
 
 void DefaultScene::render()
 {
-	_tilemap->render(constants::GAME_SCALE_F);
+	base::AssetManager::getTilemap("map_0")->render(&getCamera());
+
 	Scene::render();
 }

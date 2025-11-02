@@ -21,9 +21,11 @@ void Character::onRender()
 	if (_animator.getCurrentAnimation() == nullptr)
 	{
 		base::Renderer::draw(
-			_props.spriteSheet->getSprite(0), 
+			_props.spriteSheet->getSprite(0),
 			_transform.position,
-			_transform.scale
+			_transform.scale,
+			false,
+			&base::SceneManager::getActiveScene()->getCamera()
 		);
 	}
 	

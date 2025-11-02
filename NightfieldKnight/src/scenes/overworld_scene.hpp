@@ -7,6 +7,7 @@ class OverworldScene : public base::Scene
 {
 public:
 	void enter() override;
+	void update() override;
 	void exit() override;
 };
 

@@ -41,6 +41,8 @@ namespace base
 
 		void run();
 
+		bool isRunning() const;
+
 	private:
 		EngineSpecifications _specs;
 		bool _running;

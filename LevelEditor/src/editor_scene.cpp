@@ -270,7 +270,7 @@ namespace level_editor
 		_cmdHandler.addCommand("showlayers", [this](std::istringstream& iss) {
 			for (size_t i = 0; i < _tilemap->getLayers().size(); i++)
 			{
-				std::cout << "[" << i << "]" << _tilemap->getLayers()[i].name << std::endl;
+				std::cout << "[" << i << "] " << _tilemap->getLayers()[i].name << std::endl;
 			}
 		});
 

@@ -119,6 +119,7 @@ namespace level_editor
 	{
 		json data;
 		data["layers"] = _layers;
+		data["tile_size"] = _tileSize;
 
 		std::string fullPath = std::string(PROJECT_SOURCE_DIR) + "/res/data/maps/" + filePath;
 		std::filesystem::path path(fullPath.c_str());

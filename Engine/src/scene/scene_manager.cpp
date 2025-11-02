@@ -51,6 +51,11 @@ namespace base
 		_activeScene->render();
 	}
 
+	std::shared_ptr<Scene> SceneManager::getActiveScene()
+	{
+		return _activeScene;
+	}
+
 	void SceneManager::shutdown()
 	{
 		_activeScene = nullptr;

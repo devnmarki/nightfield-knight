@@ -18,6 +18,8 @@ namespace base
 		static void updateActiveScene();
 		static void renderActiveScene();
 
+		static std::shared_ptr<Scene> getActiveScene();
+
 		static void shutdown();
 
 	private:

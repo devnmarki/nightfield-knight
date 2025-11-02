@@ -45,7 +45,7 @@ namespace base
 		_currentAnimation->play();
 
 		Sprite& sprite = _currentAnimation->getCurrentFrameSprite();
-		base::Renderer::draw(sprite, position, scale, sprite.flip);
+		base::Renderer::draw(sprite, position, scale, sprite.flip, &SceneManager::getActiveScene()->getCamera());
 	}
 
 	Animation* Animator::getCurrentAnimation()
