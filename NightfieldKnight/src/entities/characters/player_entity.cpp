@@ -28,11 +28,11 @@ void PlayerEntity::onUpdate()
 
 	_currentState = isMoving() ? "walk" : "idle";
 
-	handleInputs();
-	updateCurrentAnimation();
+	_handleInputs();
+	_updateCurrentAnimation();
 }
 
-void PlayerEntity::handleInputs()
+void PlayerEntity::_handleInputs()
 {
 	_velocity = glm::vec2(0.0f, 0.0f);
 
@@ -47,7 +47,7 @@ void PlayerEntity::handleInputs()
 		_velocity.y = 1.0f;
 }
 
-void PlayerEntity::updateCurrentAnimation()
+void PlayerEntity::_updateCurrentAnimation()
 {
 	std::string animationKey = _currentState + "_" + constants::DIRECTION_TO_STRING_MAP[_facingDirection];
 	_animator.playAnimation(animationKey);

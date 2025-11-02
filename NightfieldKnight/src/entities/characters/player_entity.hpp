@@ -14,8 +14,8 @@ public:
 	void onUpdate() override;
 
 private:
-	void handleInputs();
-	void updateCurrentAnimation();
+	void _handleInputs();
+	void _updateCurrentAnimation();
 
 private:
 	inline static const float MOVEMENT_SPEED = 250.0f;
