@@ -226,7 +226,11 @@ namespace level_editor
 				});
 				_currentLayerIndex = _tilemap->getLayers().size() - 1;
 
-				std::cout << "Create new layer '" << name << "'" << std::endl;
+				std::cout << "Created new layer '" << name << "'" << std::endl;
+			}
+			else 
+			{
+				std::cout << "Usage: newlayer <name> <tile|object|entity>" << std::endl;
 			}
 		});
 
@@ -253,6 +257,23 @@ namespace level_editor
 			}
 		});
 
+		_cmdHandler.addCommand("renamelayer", [this](std::istringstream& iss) {
+			std::string oldName, newName;
+			if (iss >> oldName >> newName)
+			{
+				MapLayer* layer = _tilemap->getLayerByName(oldName);
+				if (layer != nullptr)
+					layer->name = newName;
+			}
+		});
+
+		_cmdHandler.addCommand("showlayers", [this](std::istringstream& iss) {
+			for (size_t i = 0; i < _tilemap->getLayers().size(); i++)
+			{
+				std::cout << "[" << i << "]" << _tilemap->getLayers()[i].name << std::endl;
+			}
+		});
+
 		_cmdHandler.addCommand("help", [this](std::istringstream& iss) {
 			std::cout << "\nAvailable Commands:\n";
 			std::cout << "  load <filename>\n";
@@ -261,6 +282,8 @@ namespace level_editor
 			std::cout << "\n";
 			std::cout << "  newlayer <name> <tile|object|entity>\n";
 			std::cout << "  movelayer <up|down>\n";
+			std::cout << "  renamelayer <old_name> <new_name>\n";
+			std::cout << "  showlayers\n";
 			std::cout << "\n";
 			std::cout << "  help\n";
 		});

@@ -29,7 +29,9 @@ namespace level_editor
 		void setTile(const glm::ivec2& pos, int id, int layerId);
 		void removeTile(const glm::ivec2& pos, int layerId);
 		Tile& getTile(const glm::ivec2& position, int layerId);
+		
 		void addLayer(const MapLayer& layer);
+		MapLayer* getLayerByName(const std::string& name);
 
 		void render(base::Camera* camera);
 

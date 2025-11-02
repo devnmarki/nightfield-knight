@@ -63,6 +63,21 @@ namespace level_editor
 		_layers.push_back(layer);
 	}
 
+	MapLayer* Tilemap::getLayerByName(const std::string& name)
+	{
+		for (MapLayer& layer : _layers)
+		{
+			if (layer.name == name)
+			{
+				return &layer;
+			}
+		}
+
+		std::cout << "Unknown layer '" << name << "'!" << std::endl;
+
+		return nullptr;
+	}
+
 	void Tilemap::render(base::Camera* camera)
 	{
 		if (_tilesets[_tilesetIndex] == nullptr || camera == nullptr) return;
