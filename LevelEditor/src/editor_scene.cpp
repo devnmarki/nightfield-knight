@@ -37,6 +37,8 @@ namespace level_editor
 		_tileSize = _tilemap->getTileSize();
 		_tileSizeScaled = _tileSize * _tilemap->getScale();
 
+		_tilemap->setActiveLayer(_currentLayerIndex);
+
 		createTileset();
 		initCommands();
 
@@ -50,6 +52,7 @@ namespace level_editor
 		handleCommands();
 		updateSelectedTile();
 		handleTilePlacement();
+		updateCurrentLayer();
 
 		if (_cameraController != nullptr)
 			_cameraController->update();
@@ -143,6 +146,33 @@ namespace level_editor
 
 		_selectedTile = 0;
 	}
+
+	void EditorScene::updateCurrentLayer()
+	{
+		int prevLayer = _currentLayerIndex;
+
+		if (base::Input::isKeyPressed(base::Keys::KEY_UP))
+		{
+			_currentLayerIndex = std::min(_currentLayerIndex + 1, static_cast<int>(_tilemap->getLayers().size() - 1));
+		}
+		else if (base::Input::isKeyPressed(base::Keys::KEY_DOWN))
+		{
+			_currentLayerIndex = std::max(_currentLayerIndex - 1, 0);
+		}
+
+		if (prevLayer != _currentLayerIndex)
+		{
+			_tilemap->setActiveLayer(_currentLayerIndex);
+			prevLayer = _currentLayerIndex;
+		}
+
+		static bool showAllLayers = true;
+		if (base::Input::isKeyPressed(base::Keys::KEY_O))
+		{
+			showAllLayers = !showAllLayers;
+			_tilemap->setShowOnlyActiveLayer(!showAllLayers);
+		}
+	}
 	
 	void EditorScene::createTilemap()
 	{
@@ -184,11 +214,54 @@ namespace level_editor
 			createTilemap();
 		});
 
+		_cmdHandler.addCommand("newlayer", [this](std::istringstream& iss) {
+			std::string name, type;
+			
+			if (iss >> name >> type)
+			{
+				_tilemap->addLayer(MapLayer{
+					.name = name,
+					.type = stringToLayerType(type),
+					.tiles = std::unordered_map<glm::ivec2, Tile> {}
+				});
+				_currentLayerIndex = _tilemap->getLayers().size() - 1;
+
+				std::cout << "Create new layer '" << name << "'" << std::endl;
+			}
+		});
+
+		_cmdHandler.addCommand("movelayer", [this](std::istringstream& iss) {
+			std::string direction;
+			if (iss >> direction)
+			{
+				if (direction == "up")
+				{
+					if (_currentLayerIndex < _tilemap->getLayers().size() - 1)
+					{
+						std::swap(_tilemap->getLayers()[_currentLayerIndex], _tilemap->getLayers()[_currentLayerIndex + 1]);
+						_currentLayerIndex++;
+					}
+				}
+				else if (direction == "down")
+				{
+					if (_currentLayerIndex > 0)
+					{
+						std::swap(_tilemap->getLayers()[_currentLayerIndex], _tilemap->getLayers()[_currentLayerIndex - 1]);
+						_currentLayerIndex--;
+					}
+				}
+			}
+		});
+
 		_cmdHandler.addCommand("help", [this](std::istringstream& iss) {
 			std::cout << "\nAvailable Commands:\n";
 			std::cout << "  load <filename>\n";
 			std::cout << "  save <filename>\n";
 			std::cout << "  new\n";
+			std::cout << "\n";
+			std::cout << "  newlayer <name> <tile|object|entity>\n";
+			std::cout << "  movelayer <up|down>\n";
+			std::cout << "\n";
 			std::cout << "  help\n";
 		});
 	}

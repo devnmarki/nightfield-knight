@@ -25,6 +25,7 @@ namespace level_editor
 		void renderSelectedTile();
 		void handleTilePlacement();
 		void switchTileset(int index);
+		void updateCurrentLayer();
 
 		void createTilemap();
 		void createTileset();

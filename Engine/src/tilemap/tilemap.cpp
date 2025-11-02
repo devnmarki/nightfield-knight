@@ -3,7 +3,13 @@
 namespace level_editor
 {
 	Tilemap::Tilemap(std::vector<TexturePtr> tilesets, int tileSize, float scale)
-		: _tileSize(tileSize), _tilesets(tilesets), _scale(scale), _tilesetIndex(0)
+		: 
+		_tileSize(tileSize), 
+		_tilesets(tilesets), 
+		_scale(scale), 
+		_tilesetIndex(0), 
+		_activeLayer(0), 
+		_showOnlyActiveLayer(false)
 	{
 
 	}
@@ -52,6 +58,11 @@ namespace level_editor
 		return _layers[layerId].tiles[position];
 	}
 
+	void Tilemap::addLayer(const MapLayer& layer)
+	{
+		_layers.push_back(layer);
+	}
+
 	void Tilemap::render(base::Camera* camera)
 	{
 		if (_tilesets[_tilesetIndex] == nullptr || camera == nullptr) return;
@@ -79,7 +90,12 @@ namespace level_editor
 					continue;
 
 				glm::vec2 position = glm::vec2(tilePos.x * _tileSize * _scale, tilePos.y * _tileSize * _scale);
-				base::Renderer::draw(_tilesets[tile.tilesetId], position - glm::vec2((_tileSize * _scale) / 2.0f), &tile.srcRect, glm::vec2(_scale), false, 255, camera);
+				
+				uint8_t opacity = 255;
+				if (_showOnlyActiveLayer && layer.name != _layers[_activeLayer].name)
+					opacity = 120;
+
+				base::Renderer::draw(_tilesets[tile.tilesetId], position - glm::vec2((_tileSize * _scale) / 2.0f), &tile.srcRect, glm::vec2(_scale), false, opacity, camera);
 			}
 		}
 	}
@@ -135,9 +151,34 @@ namespace level_editor
 		_tilesetIndex = index;
 	}
 
+	void Tilemap::setActiveLayer(int index)
+	{
+		_activeLayer = index;
+	}
+
+	void Tilemap::setShowOnlyActiveLayer(bool show)
+	{
+		_showOnlyActiveLayer = show;
+	}
+
+	std::vector<MapLayer>& Tilemap::getLayers()
+	{
+		return _layers;
+	}
+
 	int Tilemap::getTilesetIndex() const
 	{
 		return _tilesetIndex;
+	}
+
+	int Tilemap::getActiveLayer() const 
+	{
+		return _activeLayer;
+	}
+
+	bool Tilemap::showOnlyActiveLayer() const
+	{
+		return _showOnlyActiveLayer;
 	}
 
 	int Tilemap::getTileSize() const

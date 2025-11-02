@@ -1,6 +1,1272 @@
 {
     "layers": [
         {
+            "name": "dirt",
+            "tiles": [
+                {
+                    "pos": {
+                        "x": 5,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 5,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 7,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 7,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 1,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 3,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 7,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 7,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 1,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 5,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 5,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 3,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 0,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 0,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 2,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 2,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 6,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 0,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 0,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 2,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 2,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 4,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 4,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 7,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 7,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 3,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 5,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 5,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 6,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 2,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 2,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 4,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 4,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 12,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 12,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 8,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 8,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 14,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 14,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 13,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 9,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 9,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 15,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 15,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 14,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 14,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 10,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 10,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 12,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 12,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 15,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 15,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 11,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 11,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 13,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 8,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 8,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 12,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 12,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 10,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 10,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 9,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 9,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 13,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 11,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 11,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 10,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 10,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 14,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 14,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 8,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 8,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 11,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 11,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 15,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 15,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 9,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 9,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 0,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 0,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 4,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 4,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 2,
+                        "position": {
+                            "x": 6,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 18,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 18,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 18,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 18,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": -1,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": -1,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": -1,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": -1,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": -1,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": -1,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 17,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 17,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 17,
+                        "y": 10
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 17,
+                            "y": 10
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 17,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 17,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 18,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 4,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 18,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 64,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                }
+            ],
+            "type": "tile"
+        },
+        {
             "name": "tiles_layer",
             "tiles": [
                 {
@@ -1454,204 +2720,15 @@
                 },
                 {
                     "pos": {
-                        "x": 10,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 10,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
                         "x": 14,
                         "y": 9
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 14,
-                            "y": 9
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 8,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 8,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 13,
-                        "y": 9
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 13,
-                            "y": 9
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 11,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 3,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 11,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 48,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 15,
-                        "y": 8
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 15,
-                            "y": 8
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 13,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 3,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 13,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 48,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 12,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 3,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 12,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 48,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 15,
-                        "y": 9
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 15,
-                            "y": 9
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 11,
-                        "y": 11
                     },
                     "tile": {
                         "id": 11,
                         "layer_id": 0,
                         "position": {
-                            "x": 11,
-                            "y": 11
+                            "x": 14,
+                            "y": 9
                         },
                         "src_rect": {
                             "h": 16,
@@ -1664,42 +2741,21 @@
                 },
                 {
                     "pos": {
-                        "x": 9,
-                        "y": 10
+                        "x": 13,
+                        "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
-                            "x": 9,
-                            "y": 10
+                            "x": 13,
+                            "y": 9
                         },
                         "src_rect": {
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 3,
-                        "y": 8
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 3,
-                            "y": 8
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -1707,140 +2763,14 @@
                 {
                     "pos": {
                         "x": 7,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 7,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 2,
-                        "y": 8
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 2,
-                            "y": 8
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 6,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 6,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 3,
-                        "y": 9
-                    },
-                    "tile": {
-                        "id": 3,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 3,
-                            "y": 9
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 48,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 5,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 5,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 2,
-                        "y": 9
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 2,
-                            "y": 9
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 6,
-                        "y": 11
+                        "y": 12
                     },
                     "tile": {
                         "id": 11,
-                        "layer_id": 0,
+                        "layer_id": 1,
                         "position": {
-                            "x": 6,
-                            "y": 11
+                            "x": 7,
+                            "y": 12
                         },
                         "src_rect": {
                             "h": 16,
@@ -1853,15 +2783,15 @@
                 },
                 {
                     "pos": {
-                        "x": 4,
-                        "y": 10
+                        "x": 15,
+                        "y": 8
                     },
                     "tile": {
                         "id": 6,
                         "layer_id": 0,
                         "position": {
-                            "x": 4,
-                            "y": 10
+                            "x": 15,
+                            "y": 8
                         },
                         "src_rect": {
                             "h": 16,
@@ -1874,21 +2804,168 @@
                 },
                 {
                     "pos": {
-                        "x": 2,
-                        "y": 10
+                        "x": 15,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 15,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 11,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 11,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 8
                     },
                     "tile": {
                         "id": 6,
                         "layer_id": 0,
                         "position": {
-                            "x": 2,
-                            "y": 10
+                            "x": 3,
+                            "y": 8
                         },
                         "src_rect": {
                             "h": 16,
                             "w": 16,
                             "x": 16,
                             "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 10,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 10,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 2,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 6,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 2,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 3,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 2,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 2,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 6,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -1920,7 +2997,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 3,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 4,
@@ -1929,71 +3006,8 @@
                         "src_rect": {
                             "h": 16,
                             "w": 16,
-                            "x": 48,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 3,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 3,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
                             "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 14,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 3,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 14,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 48,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 15,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 3,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 15,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 48,
-                            "y": 0
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2546,6 +3560,27 @@
                 },
                 {
                     "pos": {
+                        "x": 5,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 5,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
                         "x": 13,
                         "y": 8
                     },
@@ -2588,6 +3623,27 @@
                 },
                 {
                     "pos": {
+                        "x": 2,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 2,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
                         "x": 10,
                         "y": 8
                     },
@@ -2603,6 +3659,27 @@
                             "w": 16,
                             "x": 48,
                             "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 10,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 1,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2651,6 +3728,27 @@
                 },
                 {
                     "pos": {
+                        "x": 15,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 15,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
                         "x": 7,
                         "y": 8
                     },
@@ -2666,6 +3764,27 @@
                             "w": 16,
                             "x": 16,
                             "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 13,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2718,7 +3837,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 5,
@@ -2728,7 +3847,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2739,7 +3858,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 6,
@@ -2749,7 +3868,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2760,8 +3879,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 2,
                             "y": 11
@@ -2770,7 +3889,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -2781,7 +3900,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 7,
@@ -2791,7 +3910,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2802,7 +3921,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 8,
@@ -2812,7 +3931,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2823,7 +3942,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 9,
@@ -2833,7 +3952,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2844,7 +3963,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 10,
@@ -2854,7 +3973,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2865,7 +3984,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 11,
@@ -2875,7 +3994,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
+                            "y": 32
                         },
                         "tileset_id": 0
                     }
@@ -2886,8 +4005,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 15,
                             "y": 11
@@ -2896,7 +4015,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -2907,7 +4026,7 @@
                         "y": 9
                     },
                     "tile": {
-                        "id": 6,
+                        "id": 11,
                         "layer_id": 0,
                         "position": {
                             "x": 12,
@@ -2917,447 +4036,6 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 7,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 9
-                    },
-                    "tile": {
-                        "id": 7,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 9
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 8
-                    },
-                    "tile": {
-                        "id": 7,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 8
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 7
-                    },
-                    "tile": {
-                        "id": 7,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 7
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 6
-                    },
-                    "tile": {
-                        "id": 7,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 6
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 5
-                    },
-                    "tile": {
-                        "id": 7,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 5
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 4
-                    },
-                    "tile": {
-                        "id": 7,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 4
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 3
-                    },
-                    "tile": {
-                        "id": 7,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 3
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 16,
-                        "y": 2
-                    },
-                    "tile": {
-                        "id": 2,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 16,
-                            "y": 2
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 32,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 2
-                    },
-                    "tile": {
-                        "id": 0,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 2
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 10
-                    },
-                    "tile": {
-                        "id": 5,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 10
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 9
-                    },
-                    "tile": {
-                        "id": 5,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 9
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 8
-                    },
-                    "tile": {
-                        "id": 5,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 8
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 7
-                    },
-                    "tile": {
-                        "id": 5,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 7
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 6
-                    },
-                    "tile": {
-                        "id": 5,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 6
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 9,
-                        "y": 1
-                    },
-                    "tile": {
-                        "id": 3,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 9,
-                            "y": 1
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 48,
-                            "y": 0
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 5
-                    },
-                    "tile": {
-                        "id": 5,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 5
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 9,
-                        "y": 0
-                    },
-                    "tile": {
-                        "id": 6,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 9,
-                            "y": 0
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 16,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 4
-                    },
-                    "tile": {
-                        "id": 5,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 4
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 3
-                    },
-                    "tile": {
-                        "id": 5,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 3
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
-                            "y": 16
-                        },
-                        "tileset_id": 0
-                    }
-                },
-                {
-                    "pos": {
-                        "x": 1,
-                        "y": 11
-                    },
-                    "tile": {
-                        "id": 10,
-                        "layer_id": 0,
-                        "position": {
-                            "x": 1,
-                            "y": 11
-                        },
-                        "src_rect": {
-                            "h": 16,
-                            "w": 16,
-                            "x": 0,
                             "y": 32
                         },
                         "tileset_id": 0
@@ -3366,14 +4044,14 @@
                 {
                     "pos": {
                         "x": 16,
-                        "y": 11
+                        "y": 9
                     },
                     "tile": {
                         "id": 12,
                         "layer_id": 0,
                         "position": {
                             "x": 16,
-                            "y": 11
+                            "y": 9
                         },
                         "src_rect": {
                             "h": 16,
@@ -3386,12 +4064,432 @@
                 },
                 {
                     "pos": {
+                        "x": 16,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 7
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 7
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 6
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 6
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 5
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 5
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 3
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 3
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 2
+                    },
+                    "tile": {
+                        "id": 2,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 16,
+                            "y": 2
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 2
+                    },
+                    "tile": {
+                        "id": 0,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 2
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 9
+                    },
+                    "tile": {
+                        "id": 10,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 9
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 9,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 9,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 7
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 7
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 6
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 6
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 9,
+                        "y": 1
+                    },
+                    "tile": {
+                        "id": 3,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 9,
+                            "y": 1
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 48,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 5
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 5
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 9,
+                        "y": 0
+                    },
+                    "tile": {
+                        "id": 6,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 9,
+                            "y": 0
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 3
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 1,
+                            "y": 3
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 1,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 0,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 1,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 11
+                    },
+                    "tile": {
+                        "id": 2,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 16,
+                            "y": 11
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
                         "x": 14,
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 14,
                             "y": 11
@@ -3400,7 +4498,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3411,8 +4509,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 13,
                             "y": 11
@@ -3421,7 +4519,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3432,8 +4530,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 12,
                             "y": 11
@@ -3442,7 +4540,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3453,8 +4551,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 10,
                             "y": 11
@@ -3463,7 +4561,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3474,8 +4572,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 9,
                             "y": 11
@@ -3484,7 +4582,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3495,8 +4593,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 8,
                             "y": 11
@@ -3505,7 +4603,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3516,8 +4614,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 7,
                             "y": 11
@@ -3526,7 +4624,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3537,8 +4635,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 5,
                             "y": 11
@@ -3547,7 +4645,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3558,8 +4656,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 4,
                             "y": 11
@@ -3568,7 +4666,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -3579,8 +4677,8 @@
                         "y": 11
                     },
                     "tile": {
-                        "id": 11,
-                        "layer_id": 0,
+                        "id": 1,
+                        "layer_id": 1,
                         "position": {
                             "x": 3,
                             "y": 11
@@ -3589,7 +4687,7 @@
                             "h": 16,
                             "w": 16,
                             "x": 16,
-                            "y": 32
+                            "y": 0
                         },
                         "tileset_id": 0
                     }
@@ -4201,6 +5299,894 @@
                             "y": 16
                         },
                         "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 16,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 12,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 16,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 3,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 4,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 4,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 6,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 8,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 8,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 11,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 11,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 12,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 12,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 14,
+                        "y": 12
+                    },
+                    "tile": {
+                        "id": 11,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 14,
+                            "y": 12
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 0
+                    }
+                }
+            ],
+            "type": "tile"
+        },
+        {
+            "name": "fence",
+            "tiles": [
+                {
+                    "pos": {
+                        "x": 7,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 0,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 7,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 5,
+                        "y": -2
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 5,
+                            "y": -2
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 8,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 8,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 9,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 9,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 6
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 13,
+                            "y": 6
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 1
+                    },
+                    "tile": {
+                        "id": 6,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 3,
+                            "y": 1
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 10,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 10,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 11,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 11,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 7
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 13,
+                            "y": 7
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 0
+                    },
+                    "tile": {
+                        "id": 3,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 3,
+                            "y": 0
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 12,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 12,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": 1
+                    },
+                    "tile": {
+                        "id": 8,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 6,
+                            "y": 1
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 7,
+                        "y": 5
+                    },
+                    "tile": {
+                        "id": 3,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 7,
+                            "y": 5
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": 2,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 13,
+                            "y": 4
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 7,
+                        "y": 6
+                    },
+                    "tile": {
+                        "id": 3,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 7,
+                            "y": 6
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": -1
+                    },
+                    "tile": {
+                        "id": 3,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 3,
+                            "y": -1
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": 5
+                    },
+                    "tile": {
+                        "id": -1,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "src_rect": {
+                            "h": 0,
+                            "w": 0,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 7,
+                        "y": 7
+                    },
+                    "tile": {
+                        "id": 3,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 7,
+                            "y": 7
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 3,
+                        "y": -2
+                    },
+                    "tile": {
+                        "id": 0,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 3,
+                            "y": -2
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 8,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 13,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 7,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 6,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 7,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 0,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 8,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 8,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 9,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 9,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 10,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 10,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 11,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 11,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 12,
+                        "y": 8
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 12,
+                            "y": 8
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 13,
+                        "y": 5
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 13,
+                            "y": 5
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 5,
+                        "y": 1
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 5,
+                            "y": 1
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": 4
+                    },
+                    "tile": {
+                        "id": -1,
+                        "layer_id": 0,
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "src_rect": {
+                            "h": 0,
+                            "w": 0,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "tileset_id": 0
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 4,
+                        "y": -2
+                    },
+                    "tile": {
+                        "id": 1,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 4,
+                            "y": -2
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": -1
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 6,
+                            "y": -1
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": -2
+                    },
+                    "tile": {
+                        "id": 2,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 6,
+                            "y": -2
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 0
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 6,
+                        "y": 0
+                    },
+                    "tile": {
+                        "id": 5,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 6,
+                            "y": 0
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 32,
+                            "y": 16
+                        },
+                        "tileset_id": 1
+                    }
+                },
+                {
+                    "pos": {
+                        "x": 4,
+                        "y": 1
+                    },
+                    "tile": {
+                        "id": 7,
+                        "layer_id": 1,
+                        "position": {
+                            "x": 4,
+                            "y": 1
+                        },
+                        "src_rect": {
+                            "h": 16,
+                            "w": 16,
+                            "x": 16,
+                            "y": 32
+                        },
+                        "tileset_id": 1
                     }
                 }
             ],

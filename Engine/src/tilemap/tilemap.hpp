@@ -29,6 +29,7 @@ namespace level_editor
 		void setTile(const glm::ivec2& pos, int id, int layerId);
 		void removeTile(const glm::ivec2& pos, int layerId);
 		Tile& getTile(const glm::ivec2& position, int layerId);
+		void addLayer(const MapLayer& layer);
 
 		void render(base::Camera* camera);
 
@@ -36,8 +37,13 @@ namespace level_editor
 		bool load(const std::string& filename);
 
 		void setTilesetIndex(int index);
+		void setActiveLayer(int index);
+		void setShowOnlyActiveLayer(bool show);
 
+		std::vector<MapLayer>& getLayers();
 		int getTilesetIndex() const;
+		int getActiveLayer() const;
+		bool showOnlyActiveLayer() const;
 		int getTileSize() const;
 		float getScale() const;
 
@@ -45,6 +51,8 @@ namespace level_editor
 		int _tileSize;
 		float _scale;
 		std::vector<MapLayer> _layers;
+		int _activeLayer;
+		bool _showOnlyActiveLayer;
 
 		std::vector<TexturePtr> _tilesets;
 		int _tilesetIndex;
