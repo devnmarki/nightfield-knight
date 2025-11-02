@@ -1,0 +1,10 @@
+[
+  {
+    "id": "overworld",
+    "path": "res/textures/world/tileset.png"
+  },
+  {
+    "id": "fence",
+    "path": "res/textures/world/fence.png"
+  }
+]

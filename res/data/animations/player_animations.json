@@ -1,0 +1,54 @@
+{
+  "sprite_sheet_id": "player",
+  "animations": {
+    "idle_down": {
+      "frames": [ 0, 1, 2 ],
+      "frame_duration": 0.2,
+      "loop": true,
+      "flip": false
+    },
+    "idle_up": {
+      "frames": [ 4, 5, 6 ],
+      "frame_duration": 0.2,
+      "loop": true,
+      "flip": false
+    },
+    "idle_right": {
+      "frames": [ 8, 9, 10 ],
+      "frame_duration": 0.2,
+      "loop": true,
+      "flip": false
+    },
+    "idle_left": {
+      "frames": [ 8, 9, 10 ],
+      "frame_duration": 0.2,
+      "loop": true,
+      "flip": true
+    },
+
+    "walk_down": {
+      "frames": [ 12, 13, 14, 15 ],
+      "frame_duration": 0.15,
+      "loop": true,
+      "flip": false
+    },
+    "walk_up": {
+      "frames": [ 16, 17, 18, 19 ],
+      "frame_duration": 0.15,
+      "loop": true,
+      "flip": false
+    },
+    "walk_right": {
+      "frames": [ 20, 21, 22, 23 ],
+      "frame_duration": 0.15,
+      "loop": true,
+      "flip": false
+    },
+    "walk_left": {
+      "frames": [ 20, 21, 22, 23 ],
+      "frame_duration": 0.15,
+      "loop": true,
+      "flip": true
+    }
+  }
+}

@@ -1,0 +1,134 @@
+#include "tilemap.hpp"
+
+namespace level_editor
+{
+	Tilemap::Tilemap(std::vector<TexturePtr> tilesets, int tileSize, float scale)
+		: _tileSize(tileSize), _tilesets(tilesets), _scale(scale), _tilesetIndex(0)
+	{
+		
+	}
+
+	void Tilemap::setTile(const glm::ivec2& pos, int id)
+	{
+		int columns = _tilesets[_tilesetIndex]->getWidth() / _tileSize;
+		int srcX = (id % columns) * _tileSize;
+		int srcY = (id / columns) * _tileSize;
+
+		Tile tile = {
+			.position = pos,
+			.id = id,
+			.tilesetId = _tilesetIndex,
+			.srcRect = {
+				srcX,
+				srcY,
+				_tileSize,
+				_tileSize
+			}
+		};
+
+		_tiles[pos] = tile;
+	}
+
+	void Tilemap::removeTile(const glm::ivec2& pos)
+	{
+		auto it = _tiles.find(pos);
+		if (it != _tiles.end())
+			_tiles.erase(pos);
+	}
+
+	Tile& Tilemap::getTile(const glm::ivec2& position)
+	{
+		return _tiles[position];
+	}
+
+	void Tilemap::render(base::Camera* camera)
+	{
+		if (_tilesets[_tilesetIndex] == nullptr || camera == nullptr) return;
+
+		int screenWidth = base::Window::getInstance().getWidth();
+		int screenHeight = base::Window::getInstance().getHeight();
+
+		glm::vec2 topLeft = camera->screenToWorld(glm::vec2(0, 0));
+		glm::vec2 bottomRight = camera->screenToWorld(glm::vec2(screenWidth, screenHeight));
+
+		int minTileX = (int)std::floor(topLeft.x / (_tileSize * _scale));
+		int minTileY = (int)std::floor(topLeft.y / (_tileSize * _scale));
+		int maxTileX = (int)std::ceil(bottomRight.x / (_tileSize * _scale));
+		int maxTileY = (int)std::ceil(bottomRight.y / (_tileSize * _scale));
+
+		for (auto& [tilePos, tile] : _tiles)
+		{
+			if (tilePos.x < minTileX || tilePos.x > maxTileX || 
+				tilePos.y < minTileY || tilePos.y > maxTileY)
+				continue;
+
+			glm::vec2 position = glm::vec2(tilePos.x * _tileSize * _scale, tilePos.y * _tileSize * _scale);
+			base::Renderer::draw(_tilesets[tile.tilesetId], position - glm::vec2((_tileSize * _scale) / 2.0f), &tile.srcRect, glm::vec2(_scale), false, 255, camera);
+		}
+	}
+
+	void Tilemap::save(const std::string& filePath)
+	{
+		json data;
+		data["tiles"] = _tiles;
+
+		std::string fullPath = std::string(PROJECT_SOURCE_DIR) + "/res/data/maps/" + filePath;
+		std::filesystem::path path(fullPath.c_str());
+		std::filesystem::create_directories(path.parent_path());
+
+		std::ofstream file(fullPath.c_str());
+		if (!file.is_open())
+		{
+			std::cerr << "Failed to open file for writing: " << fullPath << std::endl;
+			return;
+		}
+
+		file << data.dump(4);
+		file.flush();
+		file.close();
+
+		std::cout << "Saved tilemap successfully at '" << path << "'!" << std::endl;
+	}
+
+	bool Tilemap::load(const std::string& filename)
+	{
+		json data;
+
+		std::string fullPath = std::string(PROJECT_SOURCE_DIR) + "/res/data/maps/" + filename;
+		std::ifstream file(fullPath.c_str());
+
+		if (!file.is_open())
+		{
+			std::cerr << "Failed to open file for reading: " << fullPath << std::endl;
+			return false;
+		}
+
+		file >> data;
+
+		_tiles = data["tiles"].get<std::unordered_map<glm::ivec2, Tile>>();
+
+		std::cout << "Loaded tilemap successfully from '" << fullPath << "'!" << std::endl;
+
+		return true;
+	}
+
+	void Tilemap::setTilesetIndex(int index)
+	{
+		_tilesetIndex = index;
+	}
+
+	int Tilemap::getTilesetIndex() const
+	{
+		return _tilesetIndex;
+	}
+
+	int Tilemap::getTileSize() const
+	{
+		return _tileSize;
+	}
+
+	float Tilemap::getScale() const
+	{
+		return _scale;
+	}
+}
