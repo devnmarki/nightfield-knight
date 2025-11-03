@@ -6,6 +6,7 @@
 #include <nlohmann/json.hpp>
 
 #include "engine.hpp"
+#include "engine_ui.hpp"
 #include "command_handler.hpp"
 #include "camera_controller.hpp"
 
@@ -51,6 +52,8 @@ namespace level_editor
 		std::string _saveName;
 
 		std::unique_ptr<CameraController> _cameraController;
+
+		std::shared_ptr<ui::IWidget> _ui;
 	};
 }
 

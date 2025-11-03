@@ -5,7 +5,7 @@ namespace base
 	static Window* instance = nullptr;
 
 	Window::Window(int width, int height, const std::string& title)
-		: _width(width), _height(height), _title(title)
+		: _width(width), _height(height), _title(title), _clearColor({ 0, 0, 0, 255 })
 	{
 		instance = this;
 	}
@@ -36,12 +36,18 @@ namespace base
 
 	void Window::beginFrame() const
 	{
+		SDL_SetRenderDrawColor(_renderer, _clearColor.r, _clearColor.g, _clearColor.b, _clearColor.a);
 		SDL_RenderClear(_renderer);
 	}
 
 	void Window::endFrame() const
 	{
 		SDL_RenderPresent(_renderer);
+	}
+
+	void Window::clear(const glm::u8vec4& color)
+	{
+		_clearColor = color;
 	}
 
 	void Window::setTitle(const std::string& title)

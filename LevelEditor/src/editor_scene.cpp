@@ -43,6 +43,17 @@ namespace level_editor
 		initCommands();
 
 		_cameraController = std::make_unique<CameraController>(getCamera());
+
+		_ui = ui::make_widget<ui::Box>(
+			ui::BoxProps{
+				.position = glm::vec2(100.0f),
+				.style = ui::BoxStyle{
+					.width = 100,
+					.height = 100,
+					.backgroundColor = glm::u8vec4(255, 0, 0, 255)
+				}
+			}
+		);
 	}
 
 	void EditorScene::update()
@@ -64,6 +75,8 @@ namespace level_editor
 
 		_tilemap->render(&getCamera());
 		renderSelectedTile();
+
+		_ui->render();
 	}
 
 	void EditorScene::updateSelectedTile()
