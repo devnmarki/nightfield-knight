@@ -4,10 +4,9 @@ static Game* instance = nullptr;
 
 static void loadAssets()
 {
-	base::AssetManager::loadTexture("overworld_tileset", "res/textures/world/tileset.png");
-	base::AssetManager::loadTexture("fence_tileset", "res/textures/world/fence.png");
-
 	base::AssetManager::loadSpriteSheets("res/data/sprite_sheets.json");
+
+	base::AssetManager::loadTilemap("map_0", "map_0.json", constants::GAME_SCALE_F);
 }
 
 static void loadScenes()

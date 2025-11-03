@@ -10,6 +10,9 @@ namespace constants
 {
 	inline static constexpr float GAME_SCALE_F = 4.0f;
 	inline static const glm::vec2 GAME_SCALE = glm::vec2(GAME_SCALE_F); 
+
+	inline static constexpr int TILE_SIZE = 16;
+	inline static constexpr int TILE_SIZE_SCALED = 16 * GAME_SCALE_F;
 	
 	enum class Direction
 	{

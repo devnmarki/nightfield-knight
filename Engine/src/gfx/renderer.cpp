@@ -42,4 +42,10 @@ namespace base
     {
         draw(sprite.texture, position, &sprite.source, glm::vec2(scale), flip, sprite.alpha, camera);
     }
+
+    void Renderer::fillRect(const SDL_Rect* rect, const glm::u8vec4& color)
+    {
+        SDL_SetRenderDrawColor(Window::getInstance().getRenderer(), color.r, color.g, color.b, color.a);
+        SDL_RenderFillRect(Window::getInstance().getRenderer(), rect);
+    }
 }

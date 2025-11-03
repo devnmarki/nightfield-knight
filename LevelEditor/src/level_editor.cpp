@@ -33,6 +33,7 @@ namespace level_editor
 	 
 	void LevelEditor::run()
 	{
+		base::Window::getInstance().clear({ 0, 0, 0, 255 });
 		_engine->run();
 	}
 

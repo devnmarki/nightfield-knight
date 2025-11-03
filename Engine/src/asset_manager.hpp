@@ -14,6 +14,11 @@
 
 using json = nlohmann::json;
 
+namespace level_editor
+{
+	class Tilemap;
+}
+
 namespace base
 {
 	class AssetManager
@@ -21,15 +26,18 @@ namespace base
 	public:
 		static void loadTexture(const std::string& id, const std::string& filePath);
 		static void loadSpriteSheets(const std::string& filePath);
+		static std::shared_ptr<level_editor::Tilemap> loadTilemap(const std::string& id, const std::string& filePath, float scale = 1.0f);
 
 		static std::shared_ptr<Texture> getTexture(const std::string& id);
 		static std::shared_ptr<SpriteSheet> getSpriteSheet(const std::string& id);
+		static std::shared_ptr<level_editor::Tilemap> getTilemap(const std::string& id);
 
 		static void unload();
 
 	private:
 		inline static std::unordered_map<std::string, std::shared_ptr<Texture>> _textures = {};
 		inline static std::unordered_map<std::string, std::shared_ptr<SpriteSheet>> _spriteSheets = {};
+		inline static std::unordered_map<std::string, std::shared_ptr<level_editor::Tilemap>> _tilemaps = {};
 	};
 }
 

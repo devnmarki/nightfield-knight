@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+#include <vec4.hpp>
 #include <SDL.h>
 
 namespace base
@@ -17,6 +18,7 @@ namespace base
 
 		void beginFrame() const;
 		void endFrame() const;
+		void clear(const glm::u8vec4& color);
 
 		void setTitle(const std::string& title);
 
@@ -35,6 +37,8 @@ namespace base
 
 		SDL_Window* _handle;
 		SDL_Renderer* _renderer;
+
+		glm::u8vec4 _clearColor;
 	};
 }
 

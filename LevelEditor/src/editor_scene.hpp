@@ -6,6 +6,7 @@
 #include <nlohmann/json.hpp>
 
 #include "engine.hpp"
+#include "engine_ui.hpp"
 #include "command_handler.hpp"
 #include "camera_controller.hpp"
 
@@ -25,6 +26,7 @@ namespace level_editor
 		void renderSelectedTile();
 		void handleTilePlacement();
 		void switchTileset(int index);
+		void updateCurrentLayer();
 
 		void createTilemap();
 		void createTileset();

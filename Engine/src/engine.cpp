@@ -73,4 +73,9 @@ namespace base
 			}
 		}
 	}
+
+	bool Engine::isRunning() const
+	{
+		return _running;
+	}
 }

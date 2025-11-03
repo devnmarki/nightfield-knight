@@ -1,9 +1,12 @@
 #ifndef MAPLAYER_HPP
 #define MAPLAYER_HPP
+
 #include <unordered_map>
 #include <string>
 #include <nlohmann/json.hpp>
+
 #include "tilemap/tile.hpp"  // This already includes glm::ivec2 hash and serialization
+#include "entity/entity.hpp"
 
 namespace level_editor
 {
@@ -46,6 +49,7 @@ namespace level_editor
 		std::string name = "unnamed";
 		MapLayerType type = MapLayerType::TILE;
 		std::unordered_map<glm::ivec2, Tile> tiles;
+		std::vector<base::Entity> entities = {};
 	};
 }
 
@@ -56,21 +60,35 @@ namespace nlohmann
 	{
 		static void to_json(json& j, const level_editor::MapLayer& layer)
 		{
-			// Convert unordered_map to array of objects for better JSON structure
-			json tilesArray = json::array();
-			for (const auto& [pos, tile] : layer.tiles)
-			{
-				json tileObj;
-				tileObj["pos"] = pos;
-				tileObj["tile"] = tile;
-				tilesArray.push_back(tileObj);
-			}
-
 			j = json{
 				{ "name", layer.name },
-				{ "type", level_editor::layerTypeToString(layer.type) },
-				{ "tiles", tilesArray }
+				{ "type", level_editor::layerTypeToString(layer.type) }
 			};
+
+			// Only serialize tiles for TILE layers
+			if (layer.type == level_editor::MapLayerType::TILE)
+			{
+				json tilesArray = json::array();
+				for (const auto& [pos, tile] : layer.tiles)
+				{
+					json tileObj;
+					tileObj["pos"] = pos;
+					tileObj["tile"] = tile;
+					tilesArray.push_back(tileObj);
+				}
+				j["tiles"] = tilesArray;
+			}
+
+			// Only serialize entities for ENTITY layers
+			if (layer.type == level_editor::MapLayerType::ENTITY)
+			{
+				json entitiesArray = json::array();
+				for (const auto& entity : layer.entities)
+				{
+					entitiesArray.push_back(entity);
+				}
+				j["entities"] = entitiesArray;
+			}
 		}
 
 		static void from_json(const json& j, level_editor::MapLayer& layer)
@@ -78,12 +96,27 @@ namespace nlohmann
 			layer.name = j.at("name").get<std::string>();
 			layer.type = level_editor::stringToLayerType(j.at("type").get<std::string>());
 
+			// Only load tiles if present (TILE layers)
 			layer.tiles.clear();
-			for (const auto& tileObj : j.at("tiles"))
+			if (j.contains("tiles"))
 			{
-				glm::ivec2 pos = tileObj.at("pos").get<glm::ivec2>();
-				level_editor::Tile tile = tileObj.at("tile").get<level_editor::Tile>();
-				layer.tiles[pos] = tile;
+				for (const auto& tileObj : j.at("tiles"))
+				{
+					glm::ivec2 pos = tileObj.at("pos").get<glm::ivec2>();
+					level_editor::Tile tile = tileObj.at("tile").get<level_editor::Tile>();
+					layer.tiles[pos] = tile;
+				}
+			}
+
+			// Only load entities if present (ENTITY layers)
+			layer.entities.clear();
+			if (j.contains("entities"))
+			{
+				for (const auto& entityObj : j.at("entities"))
+				{
+					base::Entity entity = entityObj.get<base::Entity>();
+					layer.entities.push_back(entity);
+				}
 			}
 		}
 	};

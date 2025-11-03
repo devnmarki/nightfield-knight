@@ -1,12 +1,13 @@
 #include <iostream>
 
 #include "game.hpp"
+#include "constants.hpp"
 
 int main(int argc, char* argv[])
 {
 	GameSpecifications gameSpecs;
-	gameSpecs.windowWidth = 1280;
-	gameSpecs.windowHeight = 720;
+	gameSpecs.windowWidth = 20 * constants::TILE_SIZE_SCALED;
+	gameSpecs.windowHeight = 12 * constants::TILE_SIZE_SCALED;
 	gameSpecs.title = "Nightfield Knight";
 
 	Game game = Game(gameSpecs);
