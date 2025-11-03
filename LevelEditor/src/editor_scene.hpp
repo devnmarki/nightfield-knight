@@ -52,8 +52,6 @@ namespace level_editor
 		std::string _saveName;
 
 		std::unique_ptr<CameraController> _cameraController;
-
-		std::shared_ptr<ui::IWidget> _ui;
 	};
 }
 

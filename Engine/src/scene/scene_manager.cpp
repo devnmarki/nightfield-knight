@@ -49,6 +49,16 @@ namespace base
 		if (_activeScene == nullptr) return;
 
 		_activeScene->render();
+
+		for (auto& [_, widgetList] : _activeScene->getWorld()->getWidgets())
+		{
+			for (auto& widget : widgetList)
+			{
+				if (widget == nullptr) return;
+
+				widget->render();
+			}
+		}
 	}
 
 	std::shared_ptr<Scene> SceneManager::getActiveScene()

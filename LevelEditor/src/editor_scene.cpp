@@ -44,16 +44,77 @@ namespace level_editor
 
 		_cameraController = std::make_unique<CameraController>(getCamera());
 
-		_ui = ui::make_widget<ui::Box>(
+		auto ui = ui::make_widget<ui::Box>(
 			ui::BoxProps{
 				.position = glm::vec2(100.0f),
+				.width = 100,
+				.height = 100,
+				.child = ui::make_widget<ui::Box>(
+					ui::BoxProps{
+						.position = glm::vec2(10.0f),
+						.width = 50,
+						.height = 80,
+						.style = ui::BoxStyle{	
+							.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+						}
+					}
+				),
 				.style = ui::BoxStyle{
-					.width = 100,
-					.height = 100,
 					.backgroundColor = glm::u8vec4(255, 0, 0, 255)
+				},
+			}
+		);
+
+		auto gridUi = ui::make_widget<ui::Column>(
+			ui::ColumnProps{
+				.position = glm::vec2(300.0f, 100.0f),
+				.gap = 10,
+				.style = {
+					.backgroundColor = glm::u8vec4(0, 255, 0, 255)
+				},
+				.children = {
+					ui::make_widget<ui::Box>(
+						ui::BoxProps{
+							.width = 50,
+							.height = 50,
+							.style = ui::BoxStyle{
+								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+							}
+						}
+					),
+					ui::make_widget<ui::Box>(
+						ui::BoxProps{
+							.width = 50,
+							.height = 50,
+							.style = ui::BoxStyle{
+								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+							}
+						}
+					),
+					ui::make_widget<ui::Box>(
+						ui::BoxProps{
+							.width = 50,
+							.height = 50,
+							.style = ui::BoxStyle{
+								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+							}
+						}
+					),
+					ui::make_widget<ui::Box>(
+						ui::BoxProps{
+							.width = 50,
+							.height = 50,
+							.style = ui::BoxStyle{
+								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+							}
+						}
+					)
 				}
 			}
 		);
+
+		getWorld()->addWidget(ui);
+		getWorld()->addWidget(gridUi);
 	}
 
 	void EditorScene::update()
@@ -75,8 +136,6 @@ namespace level_editor
 
 		_tilemap->render(&getCamera());
 		renderSelectedTile();
-
-		_ui->render();
 	}
 
 	void EditorScene::updateSelectedTile()
@@ -207,9 +266,10 @@ namespace level_editor
 			std::string filename;
 			if (iss >> filename)
 			{
+				if (!_tilemap->load(filename)) return;
+
 				_saveName = filename;
-				if (_tilemap->load(filename))
-					_cameraController->resetCamera();
+				_cameraController->resetCamera();
 			}
 		});
 

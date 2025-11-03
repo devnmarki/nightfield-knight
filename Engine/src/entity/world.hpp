@@ -7,6 +7,7 @@
 #include <memory>
 
 #include "entity/entity.hpp"
+#include "ui/widget.hpp"
 
 namespace base
 { 
@@ -26,6 +27,14 @@ namespace base
 			entity->onStart();
 
 			list.push_back(std::move(entity));
+		}
+
+		template<typename T>
+		void addWidget(std::shared_ptr<T> widget)
+		{
+			static_assert(std::is_base_of_v<ui::IWidget, T>, "Type must be derived from IWidget class");
+			auto& list = _widgets[typeid(T)];
+			list.push_back(widget);
 		}
 
 		void updateEntities();
@@ -63,11 +72,14 @@ namespace base
 		}
 
 		using EntityMap = std::unordered_map<std::type_index, std::vector<std::unique_ptr<Entity>>>;
+		using WidgetMap = std::unordered_map<std::type_index, std::vector<std::shared_ptr<ui::IWidget>>>;
 
 		EntityMap& getEntities();
+		WidgetMap& getWidgets();
 
 	private:
 		EntityMap _entities;
+		WidgetMap _widgets;
 	};
 }
 

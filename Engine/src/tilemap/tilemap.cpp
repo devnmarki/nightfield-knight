@@ -107,7 +107,7 @@ namespace level_editor
 				glm::vec2 position = glm::vec2(tilePos.x * _tileSize * _scale, tilePos.y * _tileSize * _scale);
 				
 				uint8_t opacity = 255;
-				if (_showOnlyActiveLayer && layer.name != _layers[_activeLayer].name)
+				if (_showOnlyActiveLayer && layer.name != _layers[_activeLayer].name && _layers[_activeLayer].type == MapLayerType::TILE)
 					opacity = 120;
 
 				base::Renderer::draw(_tilesets[tile.tilesetId], position - glm::vec2((_tileSize * _scale) / 2.0f), &tile.srcRect, glm::vec2(_scale), false, opacity, camera);

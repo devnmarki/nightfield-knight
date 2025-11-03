@@ -2,19 +2,20 @@
 #define BOX_HPP
 
 #include "ui/widget.hpp"
+#include "scene/scene_manager.hpp"
 
 namespace ui
 {
 	struct BoxStyle
 	{
-		int width = 10;
-		int height = 10;
 		glm::u8vec4 backgroundColor = glm::u8vec4(0.0f);
 	};
 
 	struct BoxProps : public WidgetProps
 	{
 		glm::vec2 position = glm::vec2(0.0f);
+		int width = 0;
+		int height = 0;
 		std::shared_ptr<IWidget> child = nullptr;
 		BoxStyle style = {};
 	};
