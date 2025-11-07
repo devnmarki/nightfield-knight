@@ -5,29 +5,36 @@ namespace ui
 	Column::Column(const ColumnProps& props)
 		: WidgetBase{ props }
 	{
-		_box = make_widget<Box>(BoxProps{
-			.position = props.position,
-			.width = props.width,
-			.height = props.height,
-			.style = BoxStyle{
-				.backgroundColor = props.style.backgroundColor,
-			}
-		});
+        float totalWidth = 0;
+        float maxHeight = 0;
 
-		for (size_t i = 0; i < props.children.size(); i++)
-		{
-			auto& child = props.children[i];
+        for (size_t i = 0; i < props.children.size(); i++)
+        {
+            auto& child = props.children[i];
+            totalWidth += child->getWidth();
+            maxHeight = std::max(maxHeight, static_cast<float>(child->getHeight()));
+            if (i < props.children.size() - 1) 
+                totalWidth += props.gap;
+        }
 
-			glm::vec2 startPos = child->getPosition() + props.position;
-			float nextX = startPos.x + (i * (child->getWidth() + props.gap));
-			child->setPosition(glm::vec2(startPos.x + nextX, startPos.y));
+        float currentX = props.position.x;
+        for (auto& child : props.children)
+        {
+            child->setPosition(glm::vec2(currentX, props.position.y));
+            currentX += child->getWidth() + props.gap;
+        }
 
-			_box->getProps().width += child->getWidth() + props.gap;
-			_box->getProps().height += child->getHeight();
-		}
+        _box = make_widget<Box>(BoxProps{
+            .position = props.position,
+            .width = static_cast<int>(totalWidth),
+            .height = static_cast<int>(maxHeight),
+            .style = BoxStyle{
+                .backgroundColor = props.style.backgroundColor,
+            }
+            });
 
-		_props.width = _box->getProps().width;
-		_props.height = _box->getProps().height;
+        _props.width = _box->getProps().width;
+        _props.height = _box->getProps().height;
 	}
 
 	void Column::update()

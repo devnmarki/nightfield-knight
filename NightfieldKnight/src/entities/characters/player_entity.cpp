@@ -29,6 +29,7 @@ void PlayerEntity::onUpdate()
 	_handleInputs();
 	_updateCurrentAnimation();
 	_resetActions();
+
 	setCanMove(!_inAction);
 }
 
