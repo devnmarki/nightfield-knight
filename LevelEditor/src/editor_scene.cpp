@@ -65,7 +65,7 @@ namespace level_editor
 			}
 		);
 
-		auto gridUi = ui::make_widget<ui::Column>(
+		auto columnUi = ui::make_widget<ui::Column>(
 			ui::ColumnProps{
 				.position = glm::vec2(300.0f, 100.0f),
 				.gap = 10,
@@ -113,8 +113,57 @@ namespace level_editor
 			}
 		);
 
+		auto rowUi = ui::make_widget<ui::Row>(
+			ui::RowProps{
+				.position = glm::vec2(0.0f, 100.0f),
+				.gap = 15,
+				.style = {
+					.backgroundColor = glm::u8vec4(0, 255, 0, 255)
+				},
+				.children = {
+					ui::make_widget<ui::Box>(
+						ui::BoxProps{
+							.width = 50,
+							.height = 50,
+							.style = ui::BoxStyle{
+								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+							}
+						}
+					),
+					ui::make_widget<ui::Box>(
+						ui::BoxProps{
+							.width = 50,
+							.height = 50,
+							.style = ui::BoxStyle{
+								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+							}
+						}
+					),
+					ui::make_widget<ui::Box>(
+						ui::BoxProps{
+							.width = 50,
+							.height = 50,
+							.style = ui::BoxStyle{
+								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+							}
+						}
+					),
+					ui::make_widget<ui::Box>(
+						ui::BoxProps{
+							.width = 50,
+							.height = 50,
+							.style = ui::BoxStyle{
+								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+							}
+						}
+					)
+				}
+			}
+		);
+
 		getWorld()->addWidget(ui);
-		getWorld()->addWidget(gridUi);
+		getWorld()->addWidget(columnUi);
+		getWorld()->addWidget(rowUi);
 	}
 
 	void EditorScene::update()
