@@ -26,10 +26,10 @@ void PlayerEntity::onUpdate()
 {
 	Character::onUpdate();
 
-	_currentState = isMoving() ? "walk" : "idle";
-
 	_handleInputs();
 	_updateCurrentAnimation();
+	_resetActions();
+	setCanMove(!_inAction);
 }
 
 void PlayerEntity::_handleInputs()
@@ -45,10 +45,41 @@ void PlayerEntity::_handleInputs()
 		_velocity.y = -1.0f;
 	else if (base::Input::isKeyDown(Keys::KEY_S))
 		_velocity.y = 1.0f;
+
+	_currentAttackTime += base::Time::deltaTime;
+	if (base::Input::isMousePressed(1) && !_inAction && _currentAttackTime >= ATTACK_RATE)
+	{
+		_attack();
+		_currentAttackTime = 0.0f;
+	}
+}
+
+void PlayerEntity::_attack()
+{
+	_inAction = true;
+	
+	// TODO: Attack logic
+
+	std::cout << "Attacking" << std::endl;
+}
+
+void PlayerEntity::_resetActions()
+{
+	if (!_inAction) return;
+
+	if (_currentAttackTime >= ATTACK_RATE)
+	{
+		_inAction = false;
+	}
 }
 
 void PlayerEntity::_updateCurrentAnimation()
 {
+	if (!_inAction)
+		_currentState = isMoving() ? "walk" : "idle";
+	else
+		_currentState = "action";
+
 	std::string animationKey = _currentState + "_" + constants::DIRECTION_TO_STRING_MAP[_facingDirection];
 	_animator.playAnimation(animationKey);
 }

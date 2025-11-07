@@ -26,7 +26,10 @@ public:
 	void handleMovement();
 	void updateFacingDirection();
 
+	void setCanMove(bool canMove);
+
 	bool isMoving() const;
+	bool canMove() const;
 
 protected:
 	CharacterProps _props;
@@ -35,6 +38,9 @@ protected:
 
 	glm::vec2 _velocity = glm::vec2(0.0f); 
 	constants::Direction _facingDirection = constants::Direction::DOWN;
+
+private:
+	bool _canMove = true;
 };
 
 #endif
