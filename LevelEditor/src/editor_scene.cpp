@@ -44,6 +44,13 @@ namespace level_editor
 
 		_cameraController = std::make_unique<CameraController>(getCamera());
 
+		_font = std::make_unique<base::Font>(
+			base::AssetManager::getFont("pixel"),
+			"Example Text!",
+			glm::u8vec4(255, 255, 255, 255),
+			glm::vec2(500.0f, 500.0f)
+		);
+
 		auto ui = ui::make_widget<ui::Box>(
 			ui::BoxProps{
 				.position = glm::vec2(100.0f),
@@ -185,6 +192,8 @@ namespace level_editor
 
 		_tilemap->render(&getCamera());
 		renderSelectedTile();
+
+		_font->render();
 	}
 
 	void EditorScene::updateSelectedTile()

@@ -89,6 +89,25 @@ namespace base
 		return tilemap;
 	}
 
+	void AssetManager::loadFont(const std::string& id, const std::string& filePath, int size)
+	{
+		auto it = _fonts.find(id);
+		if (it != _fonts.end())
+		{
+			std::cout << "[ASSET_MANAGER] WARNING: Texture '" << id << "' already exists!" << std::endl;
+			return;
+		}
+
+		TTF_Font* font = TTF_OpenFont(filePath.c_str(), size);
+		if (font == nullptr)
+		{
+			std::cout << "[ASSET_MANAGER] ERROR: Failed to create font '" << id << "'!" << std::endl;
+			return;
+		}
+
+		_fonts[id] = font;
+	}
+
 	std::shared_ptr<Texture> AssetManager::getTexture(const std::string& id)
 	{
 		if (_textures.find(id) == _textures.end())
@@ -115,16 +134,34 @@ namespace base
 	{
 		if (_tilemaps.find(id) == _tilemaps.end())
 		{
-			std::cout << "[ASSET_MANAGER] ERROR: Tilemap " << id << " does not exist." << std::endl;
+			std::cout << "[ASSET_MANAGER] ERROR: Tilemap '" << id << "' does not exist." << std::endl;
 			return nullptr;
 		}
 
 		return _tilemaps.at(id);
 	}
 
-	void AssetManager::unload()
+	TTF_Font* AssetManager::getFont(const std::string& id)
 	{
+		if (_fonts.find(id) == _fonts.end())
+		{
+			std::cout << "[ASSET_MANAGER] ERROR: Font '" << id << "' does not exist." << std::endl;
+			return nullptr;
+		}
+
+		return _fonts.at(id);
+	}
+
+	void AssetManager::unload()
+	{ 
+		for (auto& [_, font] : _fonts)
+		{
+			TTF_CloseFont(font);
+		}
+
 		_spriteSheets.clear();
 		_textures.clear();
+		_tilemaps.clear();
+		_fonts.clear();
 	}
 }
