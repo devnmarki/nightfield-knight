@@ -22,17 +22,17 @@ namespace level_editor
 		void render() override;
 
 	private:
-		void updateSelectedTile();
-		void renderSelectedTile();
-		void handleTilePlacement();
-		void switchTileset(int index);
-		void updateCurrentLayer();
+		void _updateSelectedTile();
+		void _renderSelectedTile();
+		void _handleTilePlacement();
+		void _switchTileset(int index);
+		void _updateCurrentLayer();
 
-		void createTilemap();
-		void createTileset();
+		void _createTilemap();
+		void _createTileset();
 
-		void initCommands();
-		void handleCommands();
+		void _initCommands();
+		void _handleCommands();
 
 	private:
 		std::unique_ptr<base::SpriteSheet> _currentTileset;
@@ -53,7 +53,7 @@ namespace level_editor
 
 		std::unique_ptr<CameraController> _cameraController;
 
-		std::unique_ptr<base::Font> _font;
+		std::unique_ptr<base::Font> _currentLayerText;
 	};
 }
 
