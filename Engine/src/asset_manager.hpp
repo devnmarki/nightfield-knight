@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <fstream>
 
+#include <SDL_ttf.h>
 #include <nlohmann/json.hpp>
 
 #include "gfx/texture.hpp"
@@ -38,6 +39,7 @@ namespace base
 		inline static std::unordered_map<std::string, std::shared_ptr<Texture>> _textures = {};
 		inline static std::unordered_map<std::string, std::shared_ptr<SpriteSheet>> _spriteSheets = {};
 		inline static std::unordered_map<std::string, std::shared_ptr<level_editor::Tilemap>> _tilemaps = {};
+		
 	};
 }
 

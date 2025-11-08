@@ -31,7 +31,7 @@ namespace ui
             .style = BoxStyle{
                 .backgroundColor = props.style.backgroundColor,
             }
-            });
+        });
 
         _props.width = _box->getProps().width;
         _props.height = _box->getProps().height;

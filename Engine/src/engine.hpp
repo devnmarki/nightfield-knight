@@ -24,6 +24,8 @@
 //------------------------------
 #include "utils/utils.hpp" 
 
+#include <SDL_ttf.h>
+
 namespace base
 {
 	struct EngineSpecifications
