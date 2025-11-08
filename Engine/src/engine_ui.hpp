@@ -12,5 +12,6 @@
 //------------------------------
 #include "ui/layout/column.hpp"
 #include "ui/layout/row.hpp"
+#include "ui/layout/grid.hpp"
 
 #endif

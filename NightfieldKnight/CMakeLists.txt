@@ -40,4 +40,9 @@ if (WIN32)
         $<TARGET_FILE:SDL2_image>
         $<TARGET_FILE_DIR:${PROJECT_NAME}>
     )
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<TARGET_FILE:SDL2_ttf>
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    )
 endif()

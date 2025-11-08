@@ -51,7 +51,7 @@ namespace level_editor
 			glm::vec2(500.0f, 500.0f)
 		);
 
-		auto ui = ui::make_widget<ui::Box>(
+		/*auto ui = ui::make_widget<ui::Box>(
 			ui::BoxProps{
 				.position = glm::vec2(100.0f),
 				.width = 100,
@@ -166,11 +166,37 @@ namespace level_editor
 					)
 				}
 			}
+		);*/
+
+		//getWorld()->addWidget(ui);
+		//getWorld()->addWidget(columnUi);
+		//getWorld()->addWidget(rowUi);
+
+		std::vector<std::shared_ptr<ui::IWidget>> gridElements;
+		for (int i = 0; i < 24; i++)
+		{
+			gridElements.push_back(ui::make_widget<ui::Box>(
+				ui::BoxProps{
+					.style = ui::BoxStyle{
+						.backgroundColor = glm::u8vec4(0, 0, 255, 255)
+					}
+				}
+			));
+		}
+
+		std::shared_ptr<ui::Grid> grid = ui::make_widget<ui::Grid>(
+			ui::GridProps{
+				.position = glm::vec2(0.0f),
+				.gap = 10,
+				.rows = 5,
+				.columns = 5,
+				.cellWidth = 64,
+				.cellHeight = 64,
+				.children = gridElements
+			}
 		);
 
-		getWorld()->addWidget(ui);
-		getWorld()->addWidget(columnUi);
-		getWorld()->addWidget(rowUi);
+		getWorld()->addWidget(grid);
 	}
 
 	void EditorScene::update()

@@ -29,6 +29,9 @@ namespace ui
 		virtual void render() = 0;
 
 		virtual glm::vec2& getPosition() = 0;
+		virtual void setWidth(int width) = 0;
+		virtual void setHeight(int height) = 0;
+
 		virtual void setPosition(const glm::vec2& pos) = 0;
 		virtual int getWidth() const = 0;
 		virtual int getHeight() const = 0;
@@ -41,8 +44,11 @@ namespace ui
 		explicit WidgetBase(const TProps& props = {}) : _props(props) {}
 		virtual ~WidgetBase() = default;
 
-		glm::vec2& getPosition() override { return _props.position; }
 		void setPosition(const glm::vec2& pos) override { _props.position = pos; }
+		void setWidth(int width) override { _props.width = width; }
+		void setHeight(int height) override { _props.height = height; }
+
+		glm::vec2& getPosition() override { return _props.position; }
 		int getWidth() const override { return _props.width; }
 		int getHeight() const override { return _props.height; }
 
