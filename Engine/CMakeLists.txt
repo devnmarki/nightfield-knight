@@ -25,6 +25,7 @@ target_link_libraries(Engine
         SDL2main
         SDL2_image
         SDL2_ttf
+        box2d
 )
 
 if (WIN32)

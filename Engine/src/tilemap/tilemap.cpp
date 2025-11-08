@@ -14,6 +14,12 @@ namespace level_editor
 
 	}
 
+	Tilemap::~Tilemap()
+	{
+		_layers.clear();
+		_tilesets.clear();
+	}
+
 	void Tilemap::setTile(const glm::ivec2& pos, int id, int layerId)
 	{
 		if (_layers.size() == 0)

@@ -59,21 +59,12 @@ namespace level_editor
 		_handleCommands();
 		_updateSelectedTile();
 		_handleTilePlacement();
+
 		_updateCurrentLayer();
+		_updateCurrentLayerText();
 
 		if (_cameraController != nullptr)
 			_cameraController->update();
-		
-		static int lastLayerIndex = -1;
-		if (lastLayerIndex != _currentLayerIndex)
-		{
-			if (!_tilemap->getLayers().empty() && _currentLayerIndex < _tilemap->getLayers().size())
-				_currentLayerText->setContent("Layer: " + _tilemap->getLayers()[_currentLayerIndex].name);
-			else
-				_currentLayerText->setContent("Layer: --");
-
-			lastLayerIndex = _currentLayerIndex;
-		}
 	}
 
 	void EditorScene::render()
@@ -203,6 +194,20 @@ namespace level_editor
 			_tilemap->setShowOnlyActiveLayer(!showAllLayers);
 		}
 	}
+
+	void EditorScene::_updateCurrentLayerText()
+	{
+		static int lastLayerIndex = -1;
+		if (lastLayerIndex != _currentLayerIndex)
+		{
+			if (!_tilemap->getLayers().empty() && _currentLayerIndex < _tilemap->getLayers().size())
+				_currentLayerText->setContent("Layer: " + _tilemap->getLayers()[_currentLayerIndex].name);
+			else
+				_currentLayerText->setContent("Layer: --");
+
+			lastLayerIndex = _currentLayerIndex;
+		}
+	}
 	
 	void EditorScene::_createTilemap()
 	{
@@ -227,6 +232,14 @@ namespace level_editor
 				if (!_tilemap->load(filename)) return;
 
 				_saveName = filename;
+				_currentLayerIndex = 0;
+				_tilemap->setActiveLayer(_currentLayerIndex);
+
+				if (!_tilemap->getLayers().empty())
+					_currentLayerText->setContent("Layer: " + _tilemap->getLayers()[0].name);
+				else
+					_currentLayerText->setContent("Layer: --");
+
 				_cameraController->resetCamera();
 			}
 		});

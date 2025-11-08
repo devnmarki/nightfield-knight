@@ -25,6 +25,7 @@ namespace level_editor
 		using TexturePtr = std::shared_ptr<base::Texture>;
 
 		Tilemap(std::vector<TexturePtr> tilesets, int tileSize = 16, float scale = 1.0f);
+		~Tilemap();
 
 		void setTile(const glm::ivec2& pos, int id, int layerId);
 		void removeTile(const glm::ivec2& pos, int layerId);

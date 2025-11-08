@@ -30,6 +30,7 @@ namespace level_editor
 		void _handleTilePlacement();
 		void _switchTileset(int index);
 		void _updateCurrentLayer();
+		void _updateCurrentLayerText();
 
 		void _createTilemap();
 		void _createTileset();

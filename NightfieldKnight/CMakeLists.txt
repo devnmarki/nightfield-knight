@@ -27,6 +27,7 @@ target_link_libraries(${PROJECT_NAME}
         Engine
         SDL2
         SDL2main
+        box2d
 )
 
 if (WIN32)

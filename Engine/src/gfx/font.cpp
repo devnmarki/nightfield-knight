@@ -29,11 +29,11 @@ namespace base
 
 	void Font::setContent(const std::string& content)
 	{
-		std::string prevContent = _content;
-		_content = content;
+		if (_content == content)
+			return;
 
-		if (prevContent != content)
-			_regenerate();
+		_content = content;
+		_regenerate();
 	}
 
 	void Font::_regenerate()
