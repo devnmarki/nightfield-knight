@@ -86,32 +86,39 @@ namespace level_editor
 		_currentLayerText->render();
 	}
 
+	void EditorScene::_handleTileSelection()
+	{
+		if (!base::Input::isKeyDown(base::Keys::KEY_LSHIFT)) 
+			return;
+
+		int scroll = base::Input::getScrollY();
+		if (scroll == 0)
+			return;
+
+		_selectedTile += (scroll > 0) ? 1 : -1;
+		_selectedTile = std::clamp(_selectedTile, 0, _currentTileset->getSpriteCount() - 1);
+	}
+
+	void EditorScene::_handleTilesetScrolling()
+	{
+		if (!base::Input::isKeyDown(base::Keys::KEY_LCTRL))
+			return;
+
+		int scroll = base::Input::getScrollY();
+		if (scroll == 0)
+			return;
+
+		int nextIndex = (scroll > 0)
+			? (_currentTilesetIndex + 1) % _tilesets.size()
+			: (_currentTilesetIndex - 1 + _tilesets.size()) % _tilesets.size();
+
+		_switchTileset(nextIndex);
+	}
+
 	void EditorScene::_updateSelectedTile()
 	{
-		if (base::Input::isKeyDown(base::Keys::KEY_LCTRL))
-		{
-			if (base::Input::getScrollY() > 0)
-			{
-				int nextIndex = (_currentTilesetIndex + 1) % _tilesets.size();
-				_switchTileset(nextIndex);
-			}
-			else if (base::Input::getScrollY() < 0)
-			{
-				int prevIndex = (_currentTilesetIndex - 1 + _tilesets.size()) % _tilesets.size();
-				_switchTileset(prevIndex);
-			}
-		}
-		else if (base::Input::isKeyDown(base::Keys::KEY_LSHIFT))
-		{
-			if (base::Input::getScrollY() > 0)
-			{
-				_selectedTile = std::min(_selectedTile + 1, _currentTileset->getSpriteCount() - 1);
-			}
-			else if (base::Input::getScrollY() < 0)
-			{
-				_selectedTile = std::max(_selectedTile - 1, 0);
-			}
-		}
+		_handleTilesetScrolling();
+		_handleTileSelection();
 
 		glm::vec2 screenMouse(base::Input::getMouseX(), base::Input::getMouseY());
 		glm::vec2 worldMouse = getCamera().screenToWorld(screenMouse);
@@ -121,6 +128,9 @@ namespace level_editor
 
 	void EditorScene::_renderSelectedTile()
 	{
+		if (!_tilemap->getLayers().empty() && _tilemap->getLayers()[_currentLayerIndex].type != MapLayerType::TILE)
+			return;
+
 		base::Sprite& selectedTileSprite = _currentTileset->getSprite(_selectedTile);
 		selectedTileSprite.alpha = 155;
 
