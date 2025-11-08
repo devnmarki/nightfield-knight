@@ -12,8 +12,10 @@ project (NightfieldKnight)
 
 add_subdirectory(vendor/SDL)
 add_subdirectory(vendor/SDL_image)
+add_subdirectory(vendor/SDL_ttf)
 add_subdirectory(vendor/glm)
 add_subdirectory(vendor/json)
+add_subdirectory(vendor/box2d)
 
 add_subdirectory (NightfieldKnight)
 add_subdirectory(Engine)

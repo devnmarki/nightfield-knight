@@ -3,11 +3,13 @@
 
 #include <memory>
 
+#include <SDL_ttf.h>
 #include <vec2.hpp>
 #include <vec4.hpp>
 
 #include "gfx/texture.hpp"
 #include "gfx/sprite.hpp"
+#include "gfx/font.hpp"
 #include "core/window.hpp"
 #include "scene/camera.hpp"
 

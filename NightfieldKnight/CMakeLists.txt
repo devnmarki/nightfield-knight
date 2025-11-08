@@ -27,6 +27,7 @@ target_link_libraries(${PROJECT_NAME}
         Engine
         SDL2
         SDL2main
+        box2d
 )
 
 if (WIN32)
@@ -38,6 +39,11 @@ if (WIN32)
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
         $<TARGET_FILE:SDL2_image>
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    )
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<TARGET_FILE:SDL2_ttf>
         $<TARGET_FILE_DIR:${PROJECT_NAME}>
     )
 endif()

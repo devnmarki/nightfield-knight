@@ -7,6 +7,8 @@
 #include "engine.hpp"
 #include "scenes/scenes.hpp"
 
+#include <box2d/box2d.h>
+
 struct GameSpecifications
 {
 	std::string title;

@@ -6,8 +6,7 @@ namespace level_editor
 
 	static void loadAssets()
 	{
-		//base::AssetManager::loadTexture("overworld_tileset", "res/textures/world/tileset.png");
-		//base::AssetManager::loadTexture("fence_tileset", "res/textures/world/fence.png");
+		base::AssetManager::loadFont("pixel", "res/fonts/pixel_art.ttf", 24);
 	}
 
 	LevelEditor::LevelEditor()

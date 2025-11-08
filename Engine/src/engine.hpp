@@ -18,11 +18,14 @@
 #include "gfx/renderer.hpp"
 #include "gfx/sprite_sheet.hpp"
 #include "gfx/animation/animator.hpp"
+#include "gfx/font.hpp"
 
 //------------------------------
 // Utils
 //------------------------------
 #include "utils/utils.hpp" 
+
+#include <SDL_ttf.h>
 
 namespace base
 {

@@ -37,6 +37,8 @@ void Character::onRender()
 
 void Character::handleMovement()
 {
+	if (!_canMove) return;
+
 	if (isMoving())
 		_velocity = glm::normalize(_velocity);
 
@@ -55,7 +57,17 @@ void Character::updateFacingDirection()
 		_facingDirection = _velocity.x > 0 ? constants::Direction::RIGHT : constants::Direction::LEFT;
 }
 
+void Character::setCanMove(bool canMove)
+{
+	_canMove = canMove;
+}
+
 bool Character::isMoving() const
 {
 	return _velocity.x != 0.0f || _velocity.y != 0.0f;
+}
+
+bool Character::canMove() const
+{
+	return _canMove;
 }

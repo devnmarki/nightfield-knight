@@ -32,99 +32,36 @@ namespace level_editor
 		Scene::enter();
 
 		_tilesets = loadTilesets();
-		createTilemap();
+		_createTilemap();
 
 		_tileSize = _tilemap->getTileSize();
 		_tileSizeScaled = _tileSize * _tilemap->getScale();
 
 		_tilemap->setActiveLayer(_currentLayerIndex);
 
-		createTileset();
-		initCommands();
+		_createTileset();
+		_initCommands();
 
 		_cameraController = std::make_unique<CameraController>(getCamera());
 
-		auto ui = ui::make_widget<ui::Box>(
-			ui::BoxProps{
-				.position = glm::vec2(100.0f),
-				.width = 100,
-				.height = 100,
-				.child = ui::make_widget<ui::Box>(
-					ui::BoxProps{
-						.position = glm::vec2(10.0f),
-						.width = 50,
-						.height = 80,
-						.style = ui::BoxStyle{	
-							.backgroundColor = glm::u8vec4(0, 0, 255, 255)
-						}
-					}
-				),
-				.style = ui::BoxStyle{
-					.backgroundColor = glm::u8vec4(255, 0, 0, 255)
-				},
-			}
+		_currentLayerText = std::make_unique<base::Font>(
+			base::AssetManager::getFont("pixel"),
+			"Layer: --",
+			glm::u8vec4(255, 255, 255, 255),
+			glm::vec2(75.0f, 25.0f)
 		);
-
-		auto gridUi = ui::make_widget<ui::Column>(
-			ui::ColumnProps{
-				.position = glm::vec2(300.0f, 100.0f),
-				.gap = 10,
-				.style = {
-					.backgroundColor = glm::u8vec4(0, 255, 0, 255)
-				},
-				.children = {
-					ui::make_widget<ui::Box>(
-						ui::BoxProps{
-							.width = 50,
-							.height = 50,
-							.style = ui::BoxStyle{
-								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
-							}
-						}
-					),
-					ui::make_widget<ui::Box>(
-						ui::BoxProps{
-							.width = 50,
-							.height = 50,
-							.style = ui::BoxStyle{
-								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
-							}
-						}
-					),
-					ui::make_widget<ui::Box>(
-						ui::BoxProps{
-							.width = 50,
-							.height = 50,
-							.style = ui::BoxStyle{
-								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
-							}
-						}
-					),
-					ui::make_widget<ui::Box>(
-						ui::BoxProps{
-							.width = 50,
-							.height = 50,
-							.style = ui::BoxStyle{
-								.backgroundColor = glm::u8vec4(0, 0, 255, 255)
-							}
-						}
-					)
-				}
-			}
-		);
-
-		getWorld()->addWidget(ui);
-		getWorld()->addWidget(gridUi);
 	}
 
 	void EditorScene::update()
 	{
 		Scene::update();
 
-		handleCommands();
-		updateSelectedTile();
-		handleTilePlacement();
-		updateCurrentLayer();
+		_handleCommands();
+		_updateSelectedTile();
+		_handleTilePlacement();
+
+		_updateCurrentLayer();
+		_updateCurrentLayerText();
 
 		if (_cameraController != nullptr)
 			_cameraController->update();
@@ -135,35 +72,44 @@ namespace level_editor
 		Scene::render();
 
 		_tilemap->render(&getCamera());
-		renderSelectedTile();
+		_renderSelectedTile();
+
+		_currentLayerText->render();
 	}
 
-	void EditorScene::updateSelectedTile()
+	void EditorScene::_handleTileSelection()
 	{
-		if (base::Input::isKeyDown(base::Keys::KEY_LCTRL))
-		{
-			if (base::Input::getScrollY() > 0)
-			{
-				int nextIndex = (_currentTilesetIndex + 1) % _tilesets.size();
-				switchTileset(nextIndex);
-			}
-			else if (base::Input::getScrollY() < 0)
-			{
-				int prevIndex = (_currentTilesetIndex - 1 + _tilesets.size()) % _tilesets.size();
-				switchTileset(prevIndex);
-			}
-		}
-		else if (base::Input::isKeyDown(base::Keys::KEY_LSHIFT))
-		{
-			if (base::Input::getScrollY() > 0)
-			{
-				_selectedTile = std::min(_selectedTile + 1, _currentTileset->getSpriteCount() - 1);
-			}
-			else if (base::Input::getScrollY() < 0)
-			{
-				_selectedTile = std::max(_selectedTile - 1, 0);
-			}
-		}
+		if (!base::Input::isKeyDown(base::Keys::KEY_LSHIFT)) 
+			return;
+
+		int scroll = base::Input::getScrollY();
+		if (scroll == 0)
+			return;
+
+		_selectedTile += (scroll > 0) ? 1 : -1;
+		_selectedTile = std::clamp(_selectedTile, 0, _currentTileset->getSpriteCount() - 1);
+	}
+
+	void EditorScene::_handleTilesetScrolling()
+	{
+		if (!base::Input::isKeyDown(base::Keys::KEY_LCTRL))
+			return;
+
+		int scroll = base::Input::getScrollY();
+		if (scroll == 0)
+			return;
+
+		int nextIndex = (scroll > 0)
+			? (_currentTilesetIndex + 1) % _tilesets.size()
+			: (_currentTilesetIndex - 1 + _tilesets.size()) % _tilesets.size();
+
+		_switchTileset(nextIndex);
+	}
+
+	void EditorScene::_updateSelectedTile()
+	{
+		_handleTilesetScrolling();
+		_handleTileSelection();
 
 		glm::vec2 screenMouse(base::Input::getMouseX(), base::Input::getMouseY());
 		glm::vec2 worldMouse = getCamera().screenToWorld(screenMouse);
@@ -171,8 +117,11 @@ namespace level_editor
 		_mouseY = (std::round(worldMouse.y / _tileSizeScaled) * _tileSizeScaled);
 	}
 
-	void EditorScene::renderSelectedTile()
+	void EditorScene::_renderSelectedTile()
 	{
+		if (!_tilemap->getLayers().empty() && _tilemap->getLayers()[_currentLayerIndex].type != MapLayerType::TILE)
+			return;
+
 		base::Sprite& selectedTileSprite = _currentTileset->getSprite(_selectedTile);
 		selectedTileSprite.alpha = 155;
 
@@ -180,7 +129,7 @@ namespace level_editor
 		base::Renderer::draw(selectedTileSprite, glm::vec2(_mouseX, _mouseY) - glm::vec2(_tileSizeScaled / 2.0f), _tilemap->getScale(), false, &getCamera());
 	}
 
-	void EditorScene::handleTilePlacement()
+	void EditorScene::_handleTilePlacement()
 	{
 		int mx = _mouseX / _tileSizeScaled;
 		int my = _mouseY / _tileSizeScaled;
@@ -202,24 +151,24 @@ namespace level_editor
 			if (tile.id != -1)
 			{
 				_currentTilesetIndex = tile.tilesetId;
-				switchTileset(_currentTilesetIndex);
+				_switchTileset(_currentTilesetIndex);
 				_selectedTile = tile.id;
 			}
 		}
 	}
 
-	void EditorScene::switchTileset(int index)
+	void EditorScene::_switchTileset(int index)
 	{
 		if (index < 0 || index >= _tilesets.size())
 			return;
 
 		_currentTilesetIndex = index;
-		createTileset();
+		_createTileset();
 
 		_selectedTile = 0;
 	}
 
-	void EditorScene::updateCurrentLayer()
+	void EditorScene::_updateCurrentLayer()
 	{
 		int prevLayer = _currentLayerIndex;
 
@@ -245,13 +194,27 @@ namespace level_editor
 			_tilemap->setShowOnlyActiveLayer(!showAllLayers);
 		}
 	}
+
+	void EditorScene::_updateCurrentLayerText()
+	{
+		static int lastLayerIndex = -1;
+		if (lastLayerIndex != _currentLayerIndex)
+		{
+			if (!_tilemap->getLayers().empty() && _currentLayerIndex < _tilemap->getLayers().size())
+				_currentLayerText->setContent("Layer: " + _tilemap->getLayers()[_currentLayerIndex].name);
+			else
+				_currentLayerText->setContent("Layer: --");
+
+			lastLayerIndex = _currentLayerIndex;
+		}
+	}
 	
-	void EditorScene::createTilemap()
+	void EditorScene::_createTilemap()
 	{
 		_tilemap = std::make_unique<Tilemap>(_tilesets, 16, 3.0f);
 	}
 
-	void EditorScene::createTileset()
+	void EditorScene::_createTileset()
 	{
 		_currentTileset = std::make_unique<base::SpriteSheet>(base::SpriteSheetProps{
 			.texture = _tilesets[_currentTilesetIndex],
@@ -260,7 +223,7 @@ namespace level_editor
 		});
 	}
 
-	void EditorScene::initCommands()
+	void EditorScene::_initCommands()
 	{
 		_cmdHandler.addCommand("load", [this](std::istringstream& iss) {
 			std::string filename;
@@ -269,6 +232,14 @@ namespace level_editor
 				if (!_tilemap->load(filename)) return;
 
 				_saveName = filename;
+				_currentLayerIndex = 0;
+				_tilemap->setActiveLayer(_currentLayerIndex);
+
+				if (!_tilemap->getLayers().empty())
+					_currentLayerText->setContent("Layer: " + _tilemap->getLayers()[0].name);
+				else
+					_currentLayerText->setContent("Layer: --");
+
 				_cameraController->resetCamera();
 			}
 		});
@@ -284,7 +255,7 @@ namespace level_editor
 
 		_cmdHandler.addCommand("new", [this](std::istringstream& iss) {
 			_cameraController->resetCamera();
-			createTilemap();
+			_createTilemap();
 		});
 
 		_cmdHandler.addCommand("newlayer", [this](std::istringstream& iss) {
@@ -362,7 +333,7 @@ namespace level_editor
 		});
 	}
 	
-	void EditorScene::handleCommands()
+	void EditorScene::_handleCommands()
 	{
 		if (base::Input::isKeyPressed(base::Keys::KEY_F1))
 		{

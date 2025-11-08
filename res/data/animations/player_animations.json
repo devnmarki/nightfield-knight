@@ -49,6 +49,31 @@
       "frame_duration": 0.15,
       "loop": true,
       "flip": true
+    },
+
+    "action_down": {
+      "frames": [ 24 ],
+      "frame_duration": 0.2,
+      "loop": false,
+      "flip": false
+    },
+    "action_up": {
+      "frames": [ 28 ],
+      "frame_duration": 0.2,
+      "loop": false,
+      "flip": false
+    },
+    "action_right": {
+      "frames": [ 32 ],
+      "frame_duration": 0.2,
+      "loop": false,
+      "flip": false
+    },
+    "action_left": {
+      "frames": [ 36 ],
+      "frame_duration": 0.2,
+      "loop": false,
+      "flip": false
     }
   }
 }

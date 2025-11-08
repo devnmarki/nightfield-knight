@@ -2,9 +2,23 @@
 
 namespace base
 {
+	static void _init()
+	{
+		if (SDL_Init(SDL_INIT_VIDEO) < 0)
+			std::cout << "[ENGINE] ERROR: Failed to initialize SDL!" << std::endl;
+
+		if (!(IMG_Init(IMG_INIT_PNG)))
+			std::cout << "[ENGINE] ERROR: Failed to initialize SDL_image!" << std::endl;
+
+		if (TTF_Init() == -1)
+			std::cout << "[ENGINE] ERROR: Failed to initialize SDL_ttf!" << std::endl;
+	}
+
 	Engine::Engine(const EngineSpecifications& specs)
 		: _specs(specs), _running(true)
 	{
+		_init();
+
 		_window = std::make_shared<Window>(_specs.windowWidth, _specs.windowHeight, _specs.windowTitle);
 		_window->create();
 
@@ -16,6 +30,7 @@ namespace base
 		base::SceneManager::shutdown();
 		base::AssetManager::unload();
 
+		IMG_Quit();
 		SDL_Quit();
 	}
 

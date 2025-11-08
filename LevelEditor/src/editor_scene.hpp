@@ -22,25 +22,31 @@ namespace level_editor
 		void render() override;
 
 	private:
-		void updateSelectedTile();
-		void renderSelectedTile();
-		void handleTilePlacement();
-		void switchTileset(int index);
-		void updateCurrentLayer();
+		void _handleTileSelection();
+		void _handleTilesetScrolling();
+		void _updateSelectedTile();
+		void _renderSelectedTile();
 
-		void createTilemap();
-		void createTileset();
+		void _handleTilePlacement();
+		void _switchTileset(int index);
+		void _updateCurrentLayer();
+		void _updateCurrentLayerText();
 
-		void initCommands();
-		void handleCommands();
+		void _createTilemap();
+		void _createTileset();
+
+		void _initCommands();
+		void _handleCommands();
 
 	private:
 		std::unique_ptr<base::SpriteSheet> _currentTileset;
 		std::unique_ptr<Tilemap> _tilemap;
 		int _selectedTile = 0;
-		int _currentLayerIndex = 0;
 		int _tileSize = 0;
 		int _tileSizeScaled = 0;
+
+		int _currentLayerIndex = 0;
+		std::unique_ptr<base::Font> _currentLayerText;
 
 		int _currentTilesetIndex = 0;
 		std::vector<std::shared_ptr<base::Texture>> _tilesets;

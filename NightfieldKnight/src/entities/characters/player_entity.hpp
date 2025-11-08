@@ -16,11 +16,18 @@ public:
 private:
 	void _handleInputs();
 	void _updateCurrentAnimation();
-
+	
+	void _attack();
+	void _resetActions();
+	
 private:
 	inline static const float MOVEMENT_SPEED = 250.0f;
+	inline static const float ATTACK_RATE = 0.5f;
 
 	std::string _currentState;
+	bool _inAction = false;
+
+	float _currentAttackTime = 0.0f;
 };
 
 #endif
