@@ -63,6 +63,9 @@ namespace level_editor
 		_updateCurrentLayer();
 		_updateCurrentLayerText();
 
+		_updateOffgridMousePos();
+		_handleEntityPlacement();
+
 		if (_cameraController != nullptr)
 			_cameraController->update();
 	}
@@ -75,6 +78,8 @@ namespace level_editor
 		_renderSelectedTile();
 
 		_currentLayerText->render();
+
+		_renderMapEntities();
 	}
 
 	void EditorScene::_handleTileSelection()
@@ -223,6 +228,49 @@ namespace level_editor
 		});
 	}
 
+	void EditorScene::_updateOffgridMousePos()
+	{
+		_offgridMouseX = base::Input::getMouseX();
+		_offgridMouseY = base::Input::getMouseY();
+	}
+
+	void EditorScene::_renderMapEntities()
+	{
+		for (const auto& layer : _tilemap->getLayers())
+		{
+			if (layer.type != MapLayerType::ENTITY)
+				continue;
+
+			for (const auto& mapEntity : layer.entities)
+			{
+				glm::vec2 worldPos = getCamera().worldToScreen(mapEntity.position);
+				SDL_Rect mapEntityRect = { worldPos.x - 10, worldPos.y - 10, 20, 20 };
+				base::Renderer::fillRect(&mapEntityRect, glm::u8vec4(0, 0, 255, 150));
+			}
+		}
+
+		if (_tilemap->getLayers().empty() || _tilemap->getLayers()[_tilemap->getActiveLayer()].type != MapLayerType::ENTITY)
+			return;
+
+		SDL_Rect rect = { _offgridMouseX - 10, _offgridMouseY - 10, 20, 20 };
+		base::Renderer::fillRect(&rect, glm::u8vec4(0, 0, 255, 150));
+	}
+
+	void EditorScene::_handleEntityPlacement()
+	{
+		if (base::Input::isMousePressed(1))
+		{
+			glm::vec2 worldMouse = getCamera().screenToWorld(glm::vec2(_offgridMouseX, _offgridMouseY));
+
+			MapEntity mapEntity = {
+				.name = _tilemap->getSelectedEntityName(),
+				.position = worldMouse
+			};
+
+			_tilemap->addEntity(mapEntity);
+		}
+	}
+
 	void EditorScene::_initCommands()
 	{
 		_cmdHandler.addCommand("load", [this](std::istringstream& iss) {
@@ -318,6 +366,14 @@ namespace level_editor
 			}
 		});
 
+		_cmdHandler.addCommand("entity", [this](std::istringstream& iss) {
+			std::string name;
+			if (iss >> name)
+			{
+				_tilemap->setSelectedEntityName(name);
+			}
+		});
+
 		_cmdHandler.addCommand("help", [this](std::istringstream& iss) {
 			std::cout << "\nAvailable Commands:\n";
 			std::cout << "  load <filename>\n";
@@ -328,6 +384,8 @@ namespace level_editor
 			std::cout << "  movelayer <up|down>\n";
 			std::cout << "  renamelayer <old_name> <new_name>\n";
 			std::cout << "  showlayers\n";
+			std::cout << "\n";
+			std::cout << "  entity <name>\n";
 			std::cout << "\n";
 			std::cout << "  help\n";
 		});

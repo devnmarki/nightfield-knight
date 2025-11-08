@@ -69,6 +69,11 @@ namespace level_editor
 		_layers.push_back(layer);
 	}
 
+	void Tilemap::addEntity(const MapEntity& entity)
+	{
+		_layers[_activeLayer].entities.push_back(entity);
+	}
+
 	MapLayer* Tilemap::getLayerByName(const std::string& name)
 	{
 		for (MapLayer& layer : _layers)
@@ -183,6 +188,11 @@ namespace level_editor
 		_showOnlyActiveLayer = show;
 	}
 
+	void Tilemap::setSelectedEntityName(const std::string& name)
+	{
+		_selectedEntityName = name;
+	}
+
 	std::vector<MapLayer>& Tilemap::getLayers()
 	{
 		return _layers;
@@ -211,5 +221,9 @@ namespace level_editor
 	float Tilemap::getScale() const
 	{
 		return _scale;
+	}
+	std::string Tilemap::getSelectedEntityName() const
+	{
+		return _selectedEntityName;
 	}
 }

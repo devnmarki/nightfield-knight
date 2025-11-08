@@ -5,7 +5,7 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
-#include "tilemap/tile.hpp"  // This already includes glm::ivec2 hash and serialization
+#include "tilemap/tile.hpp" 
 #include "entity/entity.hpp"
 
 namespace level_editor
@@ -44,17 +44,41 @@ namespace level_editor
 			return MapLayerType::TILE;
 	}
 
+	struct MapEntity
+	{
+		std::string name;
+		glm::vec2 position;
+	};
+
 	struct MapLayer
 	{
 		std::string name = "unnamed";
 		MapLayerType type = MapLayerType::TILE;
 		std::unordered_map<glm::ivec2, Tile> tiles;
-		std::vector<base::Entity> entities = {};
+		std::vector<MapEntity> entities = {};
 	};
 }
 
 namespace nlohmann
 {
+	template<>
+	struct adl_serializer<level_editor::MapEntity>
+	{
+		static void to_json(json& j, const level_editor::MapEntity& entity)
+		{
+			j = json{
+				{ "name", entity.name },
+				{ "position", entity.position }
+			};
+		}
+
+		static void from_json(const json& j, level_editor::MapEntity& entity)
+		{
+			j.at("position").get_to(entity.position);
+			j.at("name").get_to(entity.name);
+		}
+	};
+
 	template<>
 	struct adl_serializer<level_editor::MapLayer>
 	{
@@ -65,7 +89,6 @@ namespace nlohmann
 				{ "type", level_editor::layerTypeToString(layer.type) }
 			};
 
-			// Only serialize tiles for TILE layers
 			if (layer.type == level_editor::MapLayerType::TILE)
 			{
 				json tilesArray = json::array();
@@ -79,7 +102,6 @@ namespace nlohmann
 				j["tiles"] = tilesArray;
 			}
 
-			// Only serialize entities for ENTITY layers
 			if (layer.type == level_editor::MapLayerType::ENTITY)
 			{
 				json entitiesArray = json::array();
@@ -96,7 +118,6 @@ namespace nlohmann
 			layer.name = j.at("name").get<std::string>();
 			layer.type = level_editor::stringToLayerType(j.at("type").get<std::string>());
 
-			// Only load tiles if present (TILE layers)
 			layer.tiles.clear();
 			if (j.contains("tiles"))
 			{
@@ -108,13 +129,12 @@ namespace nlohmann
 				}
 			}
 
-			// Only load entities if present (ENTITY layers)
 			layer.entities.clear();
 			if (j.contains("entities"))
 			{
 				for (const auto& entityObj : j.at("entities"))
 				{
-					base::Entity entity = entityObj.get<base::Entity>();
+					level_editor::MapEntity entity = entityObj.get<level_editor::MapEntity>();
 					layer.entities.push_back(entity);
 				}
 			}

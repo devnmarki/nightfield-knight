@@ -35,6 +35,10 @@ namespace level_editor
 		void _createTilemap();
 		void _createTileset();
 
+		void _updateOffgridMousePos();
+		void _renderMapEntities();
+		void _handleEntityPlacement();
+
 		void _initCommands();
 		void _handleCommands();
 
@@ -53,6 +57,8 @@ namespace level_editor
 
 		int _mouseX = 0;
 		int _mouseY = 0;
+		int _offgridMouseX = 0;
+		int _offgridMouseY = 0;
 
 		io::CommandHandler _cmdHandler;
 		std::string _saveName;
