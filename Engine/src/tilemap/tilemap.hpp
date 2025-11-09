@@ -34,6 +34,8 @@ namespace level_editor
 		void addLayer(const MapLayer& layer);
 		void addEntity(const MapEntity& entity);
 		MapLayer* getLayerByName(const std::string& name);
+		MapEntity* getEntityByName(const std::string& name, int layerIndex);
+		MapEntity* getEntityByPos(const glm::vec2& position, int layerIndex);
 
 		void render(base::Camera* camera);
 

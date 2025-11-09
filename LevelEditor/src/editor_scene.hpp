@@ -16,6 +16,7 @@ namespace level_editor
 	{
 	public:
 		EditorScene();
+		~EditorScene();
 
 		void enter() override;
 		void update() override;
@@ -59,6 +60,7 @@ namespace level_editor
 		int _mouseY = 0;
 		int _offgridMouseX = 0;
 		int _offgridMouseY = 0;
+		SDL_Rect* _offgridMouseRect;
 
 		io::CommandHandler _cmdHandler;
 		std::string _saveName;

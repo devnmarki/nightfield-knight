@@ -22,9 +22,14 @@ namespace level_editor
 	}
 
 	EditorScene::EditorScene()
-		: _saveName("map_0.json")
+		: _saveName("map_0.json"), _offgridMouseRect(nullptr)
 	{
 		
+	}
+
+	EditorScene::~EditorScene()
+	{
+		delete _offgridMouseRect;
 	}
 
 	void EditorScene::enter()
@@ -50,6 +55,13 @@ namespace level_editor
 			glm::u8vec4(255, 255, 255, 255),
 			glm::vec2(75.0f, 25.0f)
 		);
+
+		_offgridMouseRect = new SDL_Rect{
+			.x = _offgridMouseX,
+			.y = _offgridMouseY,
+			.w = 20,
+			.h = 20
+		};
 	}
 
 	void EditorScene::update()
@@ -232,6 +244,9 @@ namespace level_editor
 	{
 		_offgridMouseX = base::Input::getMouseX();
 		_offgridMouseY = base::Input::getMouseY();
+
+		_offgridMouseRect->x = _offgridMouseX - 10;
+		_offgridMouseRect->y = _offgridMouseY - 10;
 	}
 
 	void EditorScene::_renderMapEntities()
@@ -245,29 +260,68 @@ namespace level_editor
 			{
 				glm::vec2 worldPos = getCamera().worldToScreen(mapEntity.position);
 				SDL_Rect mapEntityRect = { worldPos.x - 10, worldPos.y - 10, 20, 20 };
-				base::Renderer::fillRect(&mapEntityRect, glm::u8vec4(0, 0, 255, 150));
+				base::Renderer::fillRect(&mapEntityRect, glm::u8vec4(0, 0, 255, 255));
 			}
 		}
 
 		if (_tilemap->getLayers().empty() || _tilemap->getLayers()[_tilemap->getActiveLayer()].type != MapLayerType::ENTITY)
 			return;
 
-		SDL_Rect rect = { _offgridMouseX - 10, _offgridMouseY - 10, 20, 20 };
-		base::Renderer::fillRect(&rect, glm::u8vec4(0, 0, 255, 150));
+		base::Renderer::fillRect(_offgridMouseRect, glm::u8vec4(0, 0, 255, 100));
 	}
 
 	void EditorScene::_handleEntityPlacement()
 	{
+		glm::vec2 worldMouse = getCamera().screenToWorld(glm::vec2(_offgridMouseX, _offgridMouseY));
+		
 		if (base::Input::isMousePressed(1))
 		{
-			glm::vec2 worldMouse = getCamera().screenToWorld(glm::vec2(_offgridMouseX, _offgridMouseY));
-
 			MapEntity mapEntity = {
 				.name = _tilemap->getSelectedEntityName(),
 				.position = worldMouse
 			};
 
 			_tilemap->addEntity(mapEntity);
+		}
+		else if (base::Input::isMousePressed(3))
+		{
+			if (_tilemap->getLayers().empty())
+				return;
+
+			MapLayer& currentLayer = _tilemap->getLayers()[_tilemap->getActiveLayer()];
+			if (currentLayer.type != MapLayerType::ENTITY)
+				return;
+
+			SDL_Rect offgridMouseWorldRect = {
+				.x = static_cast<int>(worldMouse.x) - (_offgridMouseRect->w / 2),
+				.y = static_cast<int>(worldMouse.y) - (_offgridMouseRect->h / 2),
+				.w = _offgridMouseRect->w,
+				.h = _offgridMouseRect->h
+			};
+
+			auto it = currentLayer.entities.begin();
+			while (it != currentLayer.entities.end())
+			{
+				const auto& mapEntity = *it;
+
+				SDL_Rect mapEntityRect = {
+					.x = static_cast<int>(mapEntity.position.x),
+					.y = static_cast<int>(mapEntity.position.y),
+					.w = 20,
+					.h = 20
+				};
+
+				if (SDL_HasIntersection(&offgridMouseWorldRect, &mapEntityRect))
+				{
+					std::cout << "Erasing entity: " << mapEntity.name << std::endl;
+					it = currentLayer.entities.erase(it);
+					break;
+				}
+				else
+				{
+					++it;
+				}
+			}
 		}
 	}
 

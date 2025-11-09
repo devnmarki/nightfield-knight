@@ -45,6 +45,7 @@ namespace base
 
     void Renderer::fillRect(const SDL_Rect* rect, const glm::u8vec4& color)
     {
+        SDL_SetRenderDrawBlendMode(Window::getInstance().getRenderer(), SDL_BLENDMODE_BLEND);
         SDL_SetRenderDrawColor(Window::getInstance().getRenderer(), color.r, color.g, color.b, color.a);
         SDL_RenderFillRect(Window::getInstance().getRenderer(), rect);
     }

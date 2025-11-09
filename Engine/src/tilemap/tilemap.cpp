@@ -89,6 +89,32 @@ namespace level_editor
 		return nullptr;
 	}
 
+	MapEntity* Tilemap::getEntityByName(const std::string& name, int layerIndex)
+	{
+		for (MapEntity& entity : _layers[layerIndex].entities)
+		{
+			if (entity.name == name)
+			{
+				return &entity;
+			}
+		}
+
+		return nullptr;
+	}
+
+	MapEntity* Tilemap::getEntityByPos(const glm::vec2& position, int layerIndex)
+	{
+		for (MapEntity& entity : _layers[layerIndex].entities)
+		{
+			if (entity.position == position)
+			{
+				return &entity;
+			}
+		}
+
+		return nullptr;
+	}
+
 	void Tilemap::render(base::Camera* camera)
 	{
 		if (_tilesets[_tilesetIndex] == nullptr || camera == nullptr) return;
